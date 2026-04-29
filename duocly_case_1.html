@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRẮC NGHIỆM DƯỢC LÝ - CASE DƯỢC LÝ</title>
+    
+    
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#dc2626',
+                        secondary: '#0284c7'
+                    }
+                }
+            }
+        }
+    </script>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script defer src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script defer src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        * { -webkit-tap-highlight-color: transparent; outline: none; }
+        .fast-render { }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #475569; }
+        .option-transition { transition: background-color 0.15s ease-out, border-color 0.15s ease-out, transform 0.1s; }
+        html { scroll-behavior: smooth; }
+    </style>
+<style>
+        * { -webkit-tap-highlight-color: transparent; outline: none; }
+        .fast-render { }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; overflow-x: hidden; }
+.custom-scrollbar::-webkit-scrollbar { width: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #8b5cf6; border-radius: 10px; } 
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #7c3aed; } 
+.option-transition { transition: transform 0.1s ease-out, background-color 0.1s ease-out; }
+html { scroll-behavior: smooth; }
+
+.bg-animated { background: linear-gradient(270deg, #ffe4e6, #fee2e2, #fecdd3, #fff1f2); background-size: 200% 200%; } /* Disabled animation for speed */
+.dark .bg-animated { background: linear-gradient(270deg, #2e0915, #4c0519, #4a044e, #2a0412); background-size: 200% 200%; } /* Disabled animation */
+@keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+.glass-panel { background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); }
+@media (min-width: 768px) {
+  .glass-panel { background: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05); }
+}
+.dark .glass-panel { background: rgba(11, 15, 25, 0.95); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); }
+@media (min-width: 768px) {
+  .dark .glass-panel { background: rgba(11, 15, 25, 0.95); box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.25); }
+}
+.fast-render-box { content-visibility: auto; contain-intrinsic-size: 0 400px; }
+.dark .glass-panel { background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); }
+@media (min-width: 768px) {
+  .glass-panel { background: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05); }
+}
+.dark .glass-panel { background: rgba(11, 15, 25, 0.95); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); }
+@media (min-width: 768px) {
+  .dark .glass-panel { background: rgba(11, 15, 25, 0.95); box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.25); }
+}
+.fast-render-box { content-visibility: auto; contain-intrinsic-size: 0 400px; }
+.dark .glass-panel { background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); }
+@media (min-width: 768px) {
+  .glass-panel { background: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.05); }
+}
+.dark .glass-panel { background: rgba(11, 15, 25, 0.95); border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); }
+@media (min-width: 768px) {
+  .dark .glass-panel { background: rgba(11, 15, 25, 0.95); box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.25); }
+}
+.fast-render-box { content-visibility: auto; contain-intrinsic-size: 0 400px; }
+
+
+.medical-record-box { background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%); border-left: 5px solid #dc2626; border-top: 15px solid #b91c1c; box-shadow: 0 4px 20px -2px rgba(220, 38, 38, 0.1); position: relative; border-radius: 0.5rem; }
+.medical-record-box::before { content: ''; position: absolute; top: -20px; left: 50%; transform: translateX(-50%); width: 60px; height: 15px; background: #94a3b8; border-radius: 5px 5px 0 0; }
+.dark .medical-record-box { background: linear-gradient(135deg, #0f172a 0%, #020617 100%); border-left: 5px solid #f87171; border-top: 15px solid #ef4444; box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4); }
+.dark .medical-record-box::before { background: #475569; }
+.btn-gradient { background: linear-gradient(135deg, #dc2626, #0284c7); background-size: 200% auto; transition: 0.5s; }
+.btn-gradient:hover { background-position: right center; }
+
+::selection { background-color: #fef08a; color: #000; text-shadow: none; }
+.dark ::selection { background-color: #facc15; color: #000; }
+
+@keyframes heartbeat { 0% { transform: scale(1); } 14% { transform: scale(1.3); } 28% { transform: scale(1); } 42% { transform: scale(1.3); } 70% { transform: scale(1); } 100% { transform: scale(1); } }
+.animate-heartbeat { animation: heartbeat 1.2s infinite; }
+.animate-heartbeat-fast { animation: heartbeat 0.6s infinite; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+@keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-10px); } 50% { transform: translateX(10px); } 75% { transform: translateX(-10px); } }
+.animate-shake { animation: shake 0.4s ease-in-out; }
+</style>
+
+    <style id="performance-optimizations">
+        /* Optimize glass-panel class */
+        .glass-panel { 
+            backdrop-filter: none !important; 
+            -webkit-backdrop-filter: none !important; 
+            background: rgba(255, 255, 255, 0.98) !important; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important; 
+            border: 1px solid rgba(226, 232, 240, 1) !important; 
+        }
+        .dark .glass-panel { 
+            background: rgba(15, 23, 42, 0.98) !important; 
+            border-color: rgba(51, 65, 85, 1) !important; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        /* Optimize list rendering */
+        div[class*="border-slate-100"] {
+            content-visibility: auto;
+            contain-intrinsic-size: 0 200px;
+        }
+
+        /* Disable heavy hover shadows and scaling */
+        .hover\:shadow-2xl:hover, .shadow-2xl, .shadow-xl {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        /* Disable heavy blur backdrops */
+           .backdrop-blur {
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+
+        /* Removed explicit GPU blanket to save RAM on iPad */
+    </style>
+
+
+    <!-- SECURITY SCRIPT -->
+    <script>
+        // Disable Right Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        
+        // Disable Text Selection and Copy
+        document.addEventListener('selectstart', event => event.preventDefault());
+        document.addEventListener('copy', event => {
+            event.preventDefault();
+            alert("Tài liệu nội bộ: Không được phép sao chép!");
+            if (event.clipboardData) {
+                event.clipboardData.setData('text/plain', 'Tài liệu bản quyền TEAMDRCAT');
+            }
+        });
+        
+        // Disable DevTools shortcuts & Print
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if(e.key === 'F12' || e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I / J / C
+            if(e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key.toUpperCase())) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U (View Source)
+            if(e.ctrlKey && e.key.toUpperCase() === 'U') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+P (Print)
+            if(e.ctrlKey && e.key.toUpperCase() === 'P') {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S (Save)
+            if(e.ctrlKey && e.key.toUpperCase() === 'S') {
+                e.preventDefault();
+                return false;
+            }
+        });
+        
+        // Anti-Debugging
+        setInterval(function() {
+            var before = new Date().getTime();
+            debugger;
+            var after = new Date().getTime();
+            if (after - before > 100) {
+                // User has DevTools open
+                document.body.innerHTML = "<div style='text-align:center; padding: 50px; font-family: sans-serif; font-weight: bold;'>Please close Developer Tools to continue using this application.</div>";
+            }
+        }, 1000);
+    </script>
+    <!-- END SECURITY SCRIPT -->
+
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1030830160852697"
+     crossorigin="anonymous"></script>
+
+<script>
+window.customConfirmDialog = function(msg, onConfirm) {
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 bg-slate-900/80 z-[99999] flex items-center justify-center backdrop-blur-sm transition-opacity duration-300';
+    overlay.style.opacity = '0';
+    
+    const dialog = document.createElement('div');
+    dialog.className = 'bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-[2rem] shadow-2xl max-w-sm w-[90%] mx-auto transform transition-all duration-300 border border-slate-200 dark:border-slate-700 scale-95 opacity-0';
+    
+    const iconContainer = document.createElement('div');
+    iconContainer.className = 'w-16 h-16 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-600 dark:text-blue-400 shadow-inner';
+    iconContainer.innerHTML = '<i class="fa-solid fa-circle-question text-3xl"></i>';
+    
+    const title = document.createElement('h3');
+    title.className = 'text-xl font-black text-slate-800 dark:text-white mb-2 text-center uppercase tracking-wider';
+    title.innerText = 'Xác nhận';
+    
+    const message = document.createElement('p');
+    message.className = 'text-slate-500 dark:text-slate-400 text-center mb-8 font-medium text-sm sm:text-base';
+    message.innerText = msg;
+    
+    const btnContainer = document.createElement('div');
+    btnContainer.className = 'flex gap-3 justify-center';
+    
+    const btnCancel = document.createElement('button');
+    btnCancel.className = 'flex-1 px-5 py-3 rounded-xl font-bold bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600 transition-all active:scale-95';
+    btnCancel.innerText = 'Hủy';
+    btnCancel.onclick = () => {
+        overlay.style.opacity = '0';
+        dialog.classList.remove('scale-100', 'opacity-100');
+        dialog.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => { if(document.body.contains(overlay)) document.body.removeChild(overlay); }, 300);
+    };
+    
+    const btnConfirm = document.createElement('button');
+    btnConfirm.className = 'flex-1 px-5 py-3 rounded-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 text-white hover:from-blue-600 hover:to-cyan-600 shadow-md transition-all active:scale-95 shadow-blue-500/30';
+    btnConfirm.innerText = 'Đồng ý';
+    btnConfirm.onclick = () => {
+        overlay.style.opacity = '0';
+        dialog.classList.remove('scale-100', 'opacity-100');
+        dialog.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => { if(document.body.contains(overlay)) document.body.removeChild(overlay); }, 300);
+        if(onConfirm) onConfirm();
+    };
+    
+    btnContainer.appendChild(btnCancel);
+    btnContainer.appendChild(btnConfirm);
+    
+    dialog.appendChild(iconContainer);
+    dialog.appendChild(title);
+    dialog.appendChild(message);
+    dialog.appendChild(btnContainer);
+    overlay.appendChild(dialog);
+    
+    document.body.appendChild(overlay);
+    
+    // Trigger animations
+    requestAnimationFrame(() => {
+        overlay.style.opacity = '1';
+        dialog.classList.remove('scale-95', 'opacity-0');
+        dialog.classList.add('scale-100', 'opacity-100');
+    });
+};
+</script>
+
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 bg-animated transition-colors duration-300">
+    <div id="root"></div>
+    <script type="application/json" id="quizData">Q0FTRSBExq/hu6JDIEzDnSAtIFkgSMOAIE7hu5hJClTDoGkgbGnhu4d1IMSRxrDhu6NjIGJpw6puIHNv4bqhbiBi4bufaSBURUFNRFJDQVQgZOG7sWEgdHLDqm4ga2nhur9uIHRo4bupYyBjaHXhuqluIFkgSMOgIE7hu5lpCk5naGnDqm0gY+G6pW0gc2FvIGNow6lwIGTGsOG7m2kgbeG7jWkgaMOsbmggdGjhu6ljISEKClBo4bqnbiBJOiBLaMOhbmcgU2luaCB2w6AgVGh14buRYyBLaMOhbmcgTuG6pW0KQ8OidSAxOiBDYXNlIEzDom0gU8OgbmcgLSBOaGnhu4VtIFRyw7luZyBNUlNBCkLhu4duaCBuaMOibiBuYW0gNTAgdHXhu5VpIG5o4bqtcCB2aeG7h24gdsOsIG5oaeG7hW0gdHLDuW5nIGRhIHbDoCBtw7QgbeG7gW0gcGjhu6ljIHThuqFwLiBD4bqleSBt4bunIHbhur90IHRoxrDGoW5nIGNobyBr4bq/dCBxdeG6oyBsw6AgU3RhcGh5bG9jb2NjdXMgYXVyZXVzIGtow6FuZyBNZXRoaWNpbGxpbiAoTVJTQSkuIEtow6FuZyBzaW5oIG7DoG8gc2F1IMSRw6J5IGzDoCBs4buxYSBjaOG7jW4gcGjDuSBo4bujcCDEkeG7gyDEkWnhu4F1IHRy4buLIHRoZW8gxJHGsOG7nW5nIHTEqW5oIG3huqFjaD8KQS4gQW1veGljaWxpbi9heGl0IGNsYXZ1bGFuaWMKQi4gQ2VmYXpvbGluCkMuIFZhbmNvbXljaW4KRC4gQ2lwcm9mbG94YWNpbgoKxJDDoXAgw6FuIMSRw7puZzogQwpHaeG6o2kgdGjDrWNoOgpTdGFwaHlsb2NvY2N1cyBhdXJldXMga2jDoW5nIE1ldGhpY2lsbGluIChNUlNBKSBsw6AgY2jhu6duZyB04bulIGPhuqd1IMSRw6Mga2jDoW5nIGzhuqFpIHThuqV0IGPhuqMgY8OhYyBraMOhbmcgc2luaCB0aHXhu5ljIG5ow7NtIGJldGEtbGFjdGFtLCBiYW8gZ+G7k20gY+G6oyBjw6FjIHBlbmljaWxsaW4gKG5oxrAgQW1veGljaWxpbikgdsOgIGNlcGhhbG9zcG9yaW4gKG5oxrAgQ2VmYXpvbGluKS4gVmFuY29teWNpbiBsw6AgbeG7mXQga2jDoW5nIHNpbmggZ2x5Y29wZXB0aWQsIGPDsyBjxqEgY2jhur8gdMOhYyBk4bulbmcga2jDoWMgKOG7qWMgY2jhur8gdOG7lW5nIGjhu6NwIHRow6BuaCB04bq/IGLDoG8g4bufIGdpYWkgxJFv4bqhbiBz4bubbSBoxqFuIGJldGEtbGFjdGFtKSB2w6AgbMOgIG3hu5l0IHRyb25nIG5o4buvbmcgbOG7sWEgY2jhu41uIGjDoG5nIMSR4bqndSDEkeG7gyDEkWnhu4F1IHRy4buLIGPDoWMgbmhp4buFbSB0csO5bmcgbuG6t25nIGRvIE1SU0EuIENpcHJvZmxveGFjaW4gbMOgIG3hu5l0IGZsdW9yb3F1aW5vbG9uIHbDoCBraMO0bmcgcGjhuqNpIGzDoCB0aHXhu5FjIMSRxrDhu6NjIMawdSB0acOqbiBjaG8gbmhp4buFbSB0csO5bmcgZGEgZG8gTVJTQS4KQ8OidSAyOiBDxqEgQ2jhur8gVMOhYyBE4bulbmcKQ8ahIGNo4bq/IHTDoWMgZOG7pW5nIGNow61uaCBj4bunYSBraMOhbmcgc2luaCBuaMOzbSBCZXRhLWxhY3RhbSBsw6AgZ8OsPwpBLiDhu6hjIGNo4bq/IHThu5VuZyBo4bujcCBwcm90ZWluIGLhurFuZyBjw6FjaCBn4bqvbiB2w6BvIHRp4buDdSBwaOG6p24gMzBTIGPhu6dhIHJpYm9zb21lLgpCLiDhu6hjIGNo4bq/IHThu5VuZyBo4bujcCB0aMOgbmggdOG6vyBiw6BvIHZpIGtodeG6qW4gYuG6sW5nIGPDoWNoIGfhuq9uIHbDoG8gdHJhbnNwZXB0aWRhc2UgKFBCUCkuCkMuIOG7qGMgY2jhur8gdOG7lW5nIGjhu6NwIGFjaWQgZm9saWMgY+G7p2Egdmkga2h14bqpbi4KRC4g4buoYyBjaOG6vyBBRE4gZ3lyYXNlLCBuZ8SDbiBj4bqjbiBz4buxIHNhbyBjaMOpcCBBRE4uCgrEkMOhcCDDoW4gxJHDum5nOiBCCkdp4bqjaSB0aMOtY2g6ClThuqV0IGPhuqMgY8OhYyBraMOhbmcgc2luaCBuaMOzbSBiZXRhLWxhY3RhbSAocGVuaWNpbGxpbiwgY2VwaGFsb3Nwb3JpbiwgY2FyYmFwZW5lbSkgxJHhu4F1IGPDsyBjaHVuZyBjxqEgY2jhur8gdMOhYyBk4bulbmcgbMOgIGfhuq9uIHbDoG8gZW56eW0gdHJhbnNwZXB0aWRhc2UsIGPDsm4gxJHGsOG7o2MgZ+G7jWkgbMOgIFByb3RlaW4gR+G6r24gUGVuaWNpbGxpbiAoUGVuaWNpbGxpbiBCaW5kaW5nIFByb3RlaW4gLSBQQlApLiBFbnp5bSBuw6B5IHLhuqV0IHF1YW4gdHLhu41uZyB0cm9uZyB2aeG7h2MgdOG6oW8gY8OhYyBsacOqbiBr4bq/dCBjaMOpbyBwZXB0aWRvZ2x5Y2FuIMSR4buDIGjDrG5oIHRow6BuaCBuw6puIHbDoWNoIHThur8gYsOgbyB2aSBraHXhuqluIHbhu69uZyBjaOG6r2MuIEtoaSBlbnp5bSBuw6B5IGLhu4sg4bupYyBjaOG6vywgdmkga2h14bqpbiBraMO0bmcgdGjhu4MgdOG6oW8gxJHGsOG7o2MgdsOhY2ggdOG6vyBiw6BvIGhvw6BuIGNo4buJbmggdsOgIHPhur0gYuG7iyBseSBnaeG6o2kuCkPDonUgMzogUGjDom4gTG/huqFpIHbDoCBQaOG7lSBUw6FjIEThu6VuZwpDZXBoYWxvc3BvcmluIHRo4bq/IGjhu4cgbsOgbyBzYXUgxJHDonkgY8OzIHBo4buVIHTDoWMgZOG7pW5nIG3huqFuaCB0csOqbiBQc2V1ZG9tb25hcyBhZXJ1Z2lub3NhICh0cuG7sWMga2h14bqpbiBt4bunIHhhbmgpPwpBLiBUaOG6vyBo4buHIDEgKHbDrSBk4bulOiBDZWZhbGV4aW4pCkIuIFRo4bq/IGjhu4cgMiAodsOtIGThu6U6IENlZnVyb3hpbSkKQy4gVGjhur8gaOG7hyAzICh2w60gZOG7pTogQ2VmdGF6aWRpbSkgdsOgIFRo4bq/IGjhu4cgNCAodsOtIGThu6U6IENlZmVwaW0pCkQuIFThuqV0IGPhuqMgY8OhYyB0aOG6vyBo4buHIMSR4buBdSBjw7MgdMOhYyBk4bulbmcgdMawxqFuZyDEkcawxqFuZy4KCsSQw6FwIMOhbiDEkcO6bmc6IEMKR2nhuqNpIHRow61jaDoKUGjhu5Uga2jDoW5nIGtodeG6qW4gY+G7p2EgY8OhYyBjZXBoYWxvc3BvcmluIHRoYXkgxJHhu5VpIHRoZW8gdGjhur8gaOG7hy4gVGjhur8gaOG7hyAxIGPDsyB0w6FjIGThu6VuZyBjaOG7pyB54bq/dSB0csOqbiB2aSBraHXhuqluIEdyYW0gZMawxqFuZy4gUGjhu5UgxJHGsOG7o2MgbeG7nyBy4buZbmcgZOG6p24gc2FuZyBHcmFtIMOibSDhu58gY8OhYyB0aOG6vyBo4buHIHNhdS4gQ2VwaGFsb3Nwb3JpbiB0aOG6vyBo4buHIDMgKG5oxrAgQ2VmdGF6aWRpbSkgdsOgIHRo4bq/IGjhu4cgNCAobmjGsCBDZWZlcGltKSBjw7MgaG/huqF0IHTDrW5oIHLhuqV0IG3huqFuaCB0csOqbiBjw6FjIHRy4buxYyBraHXhuqluIEdyYW0gw6JtLCBiYW8gZ+G7k20gY+G6oyBjw6FjIGNo4bunbmcga2jDsyDEkWnhu4F1IHRy4buLIG5oxrAgUHNldWRvbW9uYXMgYWVydWdpbm9zYS4KQ8OidSA0OiBDYXNlIEzDom0gU8OgbmcgLSBWacOqbSBQaOG7lWkgQ+G7mW5nIMSQ4buTbmcKTeG7mXQgYuG7h25oIG5ow6JuIDYwIHR14buVaSDEkcaw4bujYyBjaOG6qW4gxJFvw6FuIHZpw6ptIHBo4buVaSBt4bqvYyBwaOG6o2kgdOG6oWkgY+G7mW5nIMSR4buTbmcuIELDoWMgc8SpIG5naGkgbmfhu50gdMOhYyBuaMOibiBraMO0bmcgxJFp4buDbiBow6xuaCAoTXljb3BsYXNtYSwgQ2hsYW15ZGlhKS4gRmx1b3JvcXVpbm9sb24gbsOgbyBzYXUgxJHDonkgxJHGsOG7o2MgY29pIGzDoCAicXVpbm9sb24gaMO0IGjhuqVwIiB2w6AgbMOgIGzhu7FhIGNo4buNbiBwaMO5IGjhu6NwPwpBLiBBY2lkIG5hbGlkaXhpYwpCLiBOb3JmbG94YWNpbgpDLiBMZXZvZmxveGFjaW4KRC4gQ+G6oyBBIHbDoCBCCgrEkMOhcCDDoW4gxJHDum5nOiBDCkdp4bqjaSB0aMOtY2g6CkPDoWMgZmx1b3JvcXVpbm9sb24gdGjhur8gaOG7hyBt4bubaSAodGjhur8gaOG7hyAzKSBuaMawIExldm9mbG94YWNpbiB2w6AgTW94aWZsb3hhY2luIMSRxrDhu6NjIGfhu41pIGzDoCAicXVpbm9sb24gaMO0IGjhuqVwIiB2w6wgY2jDum5nIGPDsyBwaOG7lSBraMOhbmcga2h14bqpbiDEkcaw4bujYyBj4bqjaSB0aeG6v24sIHTDoWMgZOG7pW5nIG3huqFuaCB0csOqbiBjw6FjIHTDoWMgbmjDom4gZ8OieSB2acOqbSBwaOG7lWkgdGjGsOG7nW5nIGfhurdwIG5oxrAgU3RyZXB0b2NvY2N1cyBwbmV1bW9uaWFlIChr4buDIGPhuqMgY2jhu6duZyBraMOhbmcgcGVuaWNpbGxpbikgdsOgIGPDoWMgdmkga2h14bqpbiBraMO0bmcgxJFp4buDbiBow6xuaC4gQWNpZCBuYWxpZGl4aWMgKHRo4bq/IGjhu4cgMSkgdsOgIE5vcmZsb3hhY2luICh0aOG6vyBo4buHIDIpIGPDsyBwaOG7lSBo4bq5cCBoxqFuLCBjaOG7pyB54bq/dSBkw7luZyB0cm9uZyBuaGnhu4VtIGtodeG6qW4gxJHGsOG7nW5nIHRp4bq/dCBuaeG7h3UgdsOgIHRpw6p1IGjDs2EuCkPDonUgNTogVMOhYyBE4bulbmcgS2jDtG5nIE1vbmcgTXXhu5FuCk3hu5l0IHRy4bq7IDcgdHXhu5VpIHNhdSBt4buZdCDEkeG7o3QgxJFp4buBdSB0cuG7iyBraMOhbmcgc2luaCBrw6lvIGTDoGksIHLEg25nIGPhu6dhIHRy4bq7IGLhu4sg4buRIHbDoG5nIHbEqW5oIHZp4buFbi4gTmjDs20ga2jDoW5nIHNpbmggbsOgbyBjw7Mga2jhuqMgbsSDbmcgY2FvIG5o4bqldCBnw6J5IHJhIHTDoWMgZOG7pW5nIGtow7RuZyBtb25nIG114buRbiBuw6B5PwpBLiBQZW5pY2lsbGluCkIuIE1hY3JvbGlkCkMuIFRldHJhY3ljbGluCkQuIEFtaW5vZ2x5Y29zaWQKCsSQw6FwIMOhbiDEkcO6bmc6IEMKR2nhuqNpIHRow61jaDoKVGV0cmFjeWNsaW4gY8OzIGto4bqjIG7Eg25nIHThuqFvIHBo4bupYyBi4buBbiB24buvbmcgduG7m2kgY2FsY2kgdsOgIGzhuq9uZyDEkeG7jW5nIHbDoG8gY8OhYyBtw7QgxJFhbmcgcGjDoXQgdHJp4buDbiwgxJHhurdjIGJp4buHdCBsw6AgeMawxqFuZyB2w6AgcsSDbmcgdHJvbmcgZ2lhaSDEkW/huqFuIHbDtGkgaMOzYS4gxJBp4buBdSBuw6B5IGfDonkgcmEgdMOsbmggdHLhuqFuZyB2w6BuZyByxINuZyB2xKluaCB2aeG7hW4uIERvIMSRw7MsIHRldHJhY3ljbGluIGNo4buRbmcgY2jhu4kgxJHhu4tuaCBjaG8gdHLhursgZW0gZMaw4bubaSA4IHR14buVaSB2w6AgcGjhu6UgbuG7ryBjw7MgdGhhaS4KQ8OidSA2OiBExrDhu6NjIEzhu7FjIEjhu41jIChQSy9QRCkKxJDhurdjIMSRaeG7g20gZMaw4bujYyBs4buxYyBo4buNYyAoUEsvUEQpIG7DoG8gbcO0IHThuqMgxJHDum5nIG5o4bqldCB24buBIG5ow7NtIEFtaW5vZ2x5Y29zaWQgdsOgIGzDoCBjxqEgc+G7nyBjaG8gY2jhur8gxJHhu5kgZMO5bmcgdGh14buRYyBt4buZdCBs4bqnbiBt4buXaSBuZ8OgeT8KQS4gRGnhu4d0IGtodeG6qW4gcGjhu6UgdGh14buZYyB0aOG7nWkgZ2lhbiAoVD5NSUMpIHbDoCBraMO0bmcgY8OzIGhp4buHdSDhu6luZyBzYXUga2jDoW5nIHNpbmggKFBBRSkuCkIuIERp4buHdCBraHXhuqluIHBo4bulIHRodeG7mWMgbuG7k25nIMSR4buZIChDbWF4L01JQykgdsOgIGPDsyBoaeG7h3Ug4bupbmcgc2F1IGtow6FuZyBzaW5oIChQQUUpIGvDqW8gZMOgaS4KQy4gS8OsbSBraHXhuqluIHBo4bulIHRodeG7mWMgdGjhu51pIGdpYW4gKFQ+TUlDKS4KRC4gS8OsbSBraHXhuqluIHBo4bulIHRodeG7mWMgbuG7k25nIMSR4buZIChBVUMvTUlDKS4KCsSQw6FwIMOhbiDEkcO6bmc6IEIKR2nhuqNpIHRow61jaDoKQW1pbm9nbHljb3NpZCBsw6Aga2jDoW5nIHNpbmggZGnhu4d0IGtodeG6qW4gcGjhu6UgdGh14buZYyBu4buTbmcgxJHhu5ksIG5naMSpYSBsw6AgbuG7k25nIMSR4buZIMSR4buJbmggKENtYXgpIGPDoG5nIGNhbyBzbyB24bubaSBu4buTbmcgxJHhu5kg4bupYyBjaOG6vyB04buRaSB0aGnhu4N1IChNSUMpLCBoaeG7h3UgcXXhuqMgZGnhu4d0IGtodeG6qW4gY8OgbmcgbeG6oW5oLiBOZ2/DoGkgcmEsIGNow7puZyBjw7MgaGnhu4d1IOG7qW5nIHNhdSBraMOhbmcgc2luaCAoUG9zdC1BbnRpYmlvdGljIEVmZmVjdCAtIFBBRSkga8OpbyBkw6BpLCB04bupYyBsw6Aga2jhuqMgbsSDbmcg4bupYyBjaOG6vyB2aSBraHXhuqluIHbhuqtuIHRp4bq/cCB04bulYyBuZ2F5IGPhuqMga2hpIG7hu5NuZyDEkeG7mSB0aHXhu5FjIHRyb25nIG3DoXUgxJHDoyB4deG7kW5nIGTGsOG7m2kgTUlDLiBIYWkgxJHhurdjIMSRaeG7g20gbsOgeSBjaG8gcGjDqXAgw6FwIGThu6VuZyBjaOG6vyDEkeG7mSBsaeG7gXUgbeG7mXQgbOG6p24gbeG7l2kgbmfDoHksIGdpw7pwIHThu5FpIMSRYSBow7NhIGhp4buHdSBxdeG6oyAoxJHhuqF0IENtYXgvTUlDIGNhbykgdsOgIGdp4bqjbSB0aGnhu4N1IMSR4buZYyB0w61uaC4KQ8OidSA3OiBDYXNlIEzDom0gU8OgbmcgLSBOaGnhu4VtIEtodeG6qW4gQuG7h25oIFZp4buHbgpC4buHbmggbmjDom4gxJFhbmcgxJFp4buBdSB0cuG7iyB04bqhaSBJQ1UgcGjDoXQgdHJp4buDbiB2acOqbSBwaOG7lWkgYuG7h25oIHZp4buHbiBkbyB2aSBraHXhuqluIMSRYSBraMOhbmcgdGh14buRYywgYmFvIGfhu5NtIGPhuqMgY2jhu6duZyBzaW5oIEVTQkwgKEV4dGVuZGVkLVNwZWN0cnVtIEJldGEtTGFjdGFtYXNlKS4gS2jDoW5nIHNpbmggbsOgbyB0aHXhu5ljIG5ow7NtIENhcmJhcGVuZW0gbMOgIGzhu7FhIGNo4buNbiDEkWnhu4F1IHRy4buLIG3huqFuaCB0cm9uZyB0csaw4budbmcgaOG7o3AgbsOgeT8KQS4gUGVuaWNpbGxpbiBHCkIuIE1lcm9wZW5lbQpDLiBBeml0aHJvbXljaW4KRC4gQ2xpbmRhbXljaW4KCsSQw6FwIMOhbiDEkcO6bmc6IEIKR2nhuqNpIHRow61jaDoKQ2FyYmFwZW5lbSAodsOtIGThu6U6IE1lcm9wZW5lbSwgSW1pcGVuZW0pIGzDoCBuaMOzbSBraMOhbmcgc2luaCBiZXRhLWxhY3RhbSBjw7MgcGjhu5Uga2jDoW5nIGtodeG6qW4gcuG6pXQgcuG7mW5nLCBi4buBbiB24buvbmcgduG7m2kgaOG6p3UgaOG6v3QgY8OhYyBlbnp5bSBiZXRhLWxhY3RhbWFzZSwga+G7gyBj4bqjIEVTQkwuIENow7puZyDEkcaw4bujYyBjb2kgbMOgIG3hu5l0IHRyb25nIG5o4buvbmcgbOG7sWEgY2jhu41uIGN14buRaSBjw7luZyB2w6AgxJHGsOG7o2MgZMOgbmggcmnDqm5nIGNobyBjw6FjIG5oaeG7hW0ga2h14bqpbiBu4bq3bmcsIHBo4bupYyB04bqhcCBkbyB2aSBraHXhuqluIMSRYSBraMOhbmcgZ8OieSByYSB04bqhaSBi4buHbmggdmnhu4duLgpDw6J1IDg6IFTDoWMgROG7pW5nIEtow7RuZyBNb25nIE114buRbgpUcm9uZyBraGkgdHJ1eeG7gW4gdMSpbmggbeG6oWNoIG3hu5l0IGxv4bqhaSBraMOhbmcgc2luaCwgYuG7h25oIG5ow6JuIMSR4buZdCBuZ+G7mXQgYuG7iyDEkeG7jyBi4burbmcgbeG6t3QgdsOgIHRow6JuIHRyw6puLCBuZ+G7qWEgdsOgIGjhuqEgaHV54bq/dCDDoXAuIEjhu5lpIGNo4bupbmcgbsOgeSDEkcaw4bujYyBn4buNaSBsw6AgIkjhu5lpIGNo4bupbmcgbmfGsOG7nWkgxJHhu48iIChSZWQgTWFuIFN5bmRyb21lKSB2w6AgbMOgIHTDoWMgZOG7pW5nIGtow7RuZyBtb25nIG114buRbiDEkeG6t2MgdHLGsG5nIGPhu6dhIHRodeG7kWMgbsOgbz8KQS4gR2VudGFtaWNpbgpCLiBMaW5lem9saWQKQy4gVmFuY29teWNpbgpELiBNZXRyb25pZGF6b2wKCsSQw6FwIMOhbiDEkcO6bmc6IEMKR2nhuqNpIHRow61jaDoKIkjhu5lpIGNo4bupbmcgbmfGsOG7nWkgxJHhu48iIGzDoCBt4buZdCBwaOG6o24g4bupbmcgZ2nhuqMgZOG7iyDhu6luZyBsacOqbiBxdWFuIMSR4bq/biB04buRYyDEkeG7mSB0cnV54buBbiwgZ8OieSByYSBi4bufaSBz4buxIGdp4bqjaSBwaMOzbmcgaGlzdGFtaW4gdOG7qyBjw6FjIHThur8gYsOgbyBtYXN0LiDEkMOieSBsw6AgdMOhYyBk4bulbmcgcGjhu6Uga2luaCDEkWnhu4NuIGPhu6dhIFZhbmNvbXljaW4uIFBo4bqjbiDhu6luZyBuw6B5IGPDsyB0aOG7gyDEkcaw4bujYyBo4bqhbiBjaOG6vyBi4bqxbmcgY8OhY2ggdHJ1eeG7gW4gdGh14buRYyBjaOG6rW0gdHJvbmcgw610IG5o4bqldCA2MCBwaMO6dC4KQ8OidSA5OiBDxqEgQ2jhur8gVMOhYyBE4bulbmcKUGjhu5FpIGjhu6NwIFRyaW1ldGhvcHJpbSB2w6AgU3VsZmFtZXRob3hhem9sIChDby10cmltb3hhem9sKSB04bqhbyByYSB0w6FjIGThu6VuZyBoaeG7h3AgxJHhu5NuZyBkaeG7h3Qga2h14bqpbiBk4buxYSB0csOqbiBjxqEgY2jhur8gbsOgbz8KQS4gQ8O5bmcg4bupYyBjaOG6vyB04buVbmcgaOG7o3AgdGjDoG5oIHThur8gYsOgbyDhu58gaGFpIHbhu4sgdHLDrSBraMOhYyBuaGF1LgpCLiBN4buZdCB0aHXhu5FjIOG7qWMgY2jhur8gdOG7lW5nIGjhu6NwIHByb3RlaW4sIG3hu5l0IHRodeG7kWMg4bupYyBjaOG6vyB04buVbmcgaOG7o3AgQUROLgpDLiDhu6hjIGNo4bq/IHR14bqnbiB04buxIGhhaSBlbnp5bSBraMOhYyBuaGF1IHRyb25nIGNvbiDEkcaw4budbmcgdOG7lW5nIGjhu6NwIGFjaWQgZm9saWMgY+G7p2Egdmkga2h14bqpbi4KRC4gTeG7mXQgdGh14buRYyBsw6AgY2jhuqV0IOG7qWMgY2jhur8gYmV0YS1sYWN0YW1hc2UsIG3hu5l0IHRodeG7kWMgbMOgIGtow6FuZyBzaW5oIGJldGEtbGFjdGFtLgoKxJDDoXAgw6FuIMSRw7puZzogQwpHaeG6o2kgdGjDrWNoOgpTdWxmYW1ldGhveGF6b2wgdsOgIFRyaW1ldGhvcHJpbSB0w6FjIMSR4buZbmcgbMOqbiBoYWkga2jDonUgbGnDqm4gdGnhur9wIHRyb25nIGPDuW5nIG3hu5l0IGNvbiDEkcaw4budbmcgY2h1eeG7g24gaMOzYSBj4bunYSB2aSBraHXhuqluLiBTdWxmYW1ldGhveGF6b2wgY+G6oW5oIHRyYW5oIHbhu5tpIFBBQkEgxJHhu4Mg4bupYyBjaOG6vyBlbnp5bSBkaWh5ZHJvZm9sYXRlIHN5bnRoZXRhc2UuIFRyaW1ldGhvcHJpbSDhu6ljIGNo4bq/IGVuenltIGRpaHlkcm9mb2xhdGUgcmVkdWN0YXNlLiBT4buxIHBob25nIHThu49hIGvDqXAgbsOgeSBsw6BtIGdpw6FuIMSRb+G6oW4gaG/DoG4gdG/DoG4gcXXDoSB0csOsbmggdOG7lW5nIGjhu6NwIGFjaWQgZm9saWMsIGThuqtuIMSR4bq/biB0w6FjIGThu6VuZyBoaeG7h3AgxJHhu5NuZyBkaeG7h3Qga2h14bqpbiBt4bqhbmggaMahbiBuaGnhu4F1IHNvIHbhu5tpIGtoaSBkw7luZyByacOqbmcgbOG6uyB04burbmcgdGh14buRYy4KQ8OidSAxMDogQ2FzZSBMw6JtIFPDoG5nIC0gTmhp4buFbSBLaHXhuqluIEvhu7UgS2jDrQpN4buZdCBi4buHbmggbmjDom4gc2F1IHBo4bqrdSB0aHXhuq10IMSR4bqhaSB0csOgbmcgcGjDoXQgdHJp4buDbiDDoXAgeGUgdHJvbmcg4buVIGLhu6VuZy4gS+G6v3QgcXXhuqMgY+G6pXkgbeG7pyBjaG8gdGjhuqV5IHPhu7EgaGnhu4duIGRp4buHbiBj4bunYSB2aSBraHXhuqluIGvhu7Uga2jDrS4gS2jDoW5nIHNpbmggbsOgbyBzYXUgxJHDonkgY8OzIGhv4bqhdCB0w61uaCBt4bqhbmggY2jhu5FuZyBs4bqhaSB2aSBraHXhuqluIGvhu7Uga2jDrT8KQS4gR2VudGFtaWNpbgpCLiBNZXRyb25pZGF6b2wKQy4gQ2VmYWxleGluCkQuIEF6aXRocm9teWNpbgoKxJDDoXAgw6FuIMSRw7puZzogQgpHaeG6o2kgdGjDrWNoOgpNZXRyb25pZGF6b2wgbMOgIG3hu5l0IGtow6FuZyBzaW5oIGPDsyDEkeG7mWMgdMOtbmggY2jhu41uIGzhu41jIHRyw6puIGPDoWMgdmkga2h14bqpbiBr4bu1IGtow60uIE7DsyDEkcaw4bujYyBob+G6oXQgaMOzYSB0cm9uZyBtw7RpIHRyxrDhu51uZyB0aGnhur91IG94eSBj4bunYSBjw6FjIHZpIGtodeG6qW4gbsOgeSDEkeG7gyB04bqhbyByYSBjw6FjIHPhuqNuIHBo4bqpbSDEkeG7mWMgZ8OieSB04buVbiB0aMawxqFuZyBBRE4uIERvIMSRw7MsIE1ldHJvbmlkYXpvbCBsw6AgbOG7sWEgY2jhu41uIGjDoG5nIMSR4bqndSB0cm9uZyDEkWnhu4F1IHRy4buLIGPDoWMgbmhp4buFbSBraHXhuqluIGRvIHZpIGtodeG6qW4ga+G7tSBraMOtIG5oxrAgw6FwIHhlIOG7lSBi4bulbmcsIMOhcCB4ZSBuw6NvLCBuaGnhu4VtIGtodeG6qW4gcsSDbmcgbWnhu4duZy4gR2VudGFtaWNpbiBjaOG7iSBjw7MgdMOhYyBk4bulbmcgdHLDqm4gdmkga2h14bqpbiBoaeG6v3Uga2jDrS4KQ8OidSAxMTogQ2FzZSBMw6JtIFPDoG5nIC0gTmhp4buFbSBO4bqlbSBYw6JtIEzhuqVuCk3hu5l0IGLhu4duaCBuaMOibiBzdXkgZ2nhuqNtIG1p4buFbiBk4buLY2ggKGdow6lwIHThu6d5KSDEkcaw4bujYyBjaOG6qW4gxJFvw6FuIG5oaeG7hW0gQXNwZXJnaWxsdXMgeMOibSBs4bqlbiDhu58gcGjhu5VpLiBUaHXhu5FjIG7DoG8gc2F1IMSRw6J5IGzDoCBs4buxYSBjaOG7jW4gaMOgbmcgxJHhuqd1IMSR4buDIMSRaeG7gXUgdHLhu4s/CkEuIEdyaXNlb2Z1bHZpbgpCLiBOeXN0YXRpbgpDLiBGbHVjb25hem9sCkQuIFZvcmljb25hem9sCgrEkMOhcCDDoW4gxJHDum5nOiBECkdp4bqjaSB0aMOtY2g6ClZvcmljb25hem9sIGzDoCBt4buZdCB0aHXhu5FjIGtow6FuZyBu4bqlbSBuaMOzbSB0cmlhem9sIHRo4bq/IGjhu4cgbeG7m2ksIGPDsyBwaOG7lSB0w6FjIGThu6VuZyBy4buZbmcgdsOgIGhv4bqhdCB0w61uaCBt4bqhbmggY2jhu5FuZyBs4bqhaSBBc3BlcmdpbGx1cy4gTsOzIMSRxrDhu6NjIGNvaSBsw6AgdGh14buRYyBs4buxYSBjaOG7jW4gaMOgbmcgxJHhuqd1IHRyb25nIMSRaeG7gXUgdHLhu4sgbmhp4buFbSBBc3BlcmdpbGx1cyB4w6JtIGzhuqVuLCBjaG8gdGjhuqV5IGhp4buHdSBxdeG6oyBjYW8gaMahbiB2w6Agw610IMSR4buZYyB0w61uaCBoxqFuIHNvIHbhu5tpIEFtcGhvdGVyaWNpbiBCIHRydXnhu4FuIHRo4buRbmcuIEZsdWNvbmF6b2wga2jDtG5nIGPDsyBob+G6oXQgdMOtbmggxJHDoW5nIHRpbiBj4bqteSB0csOqbiAKQXNwZXJnaWxsdXMuIEdyaXNlb2Z1bHZpbiB2w6AgTnlzdGF0aW4gY2jhu4kgZMO5bmcgY2hvIG7huqVtIGRhIHbDoCBuacOqbSBt4bqhYy5Dw6J1IDEyOiBDxqEgQ2jhur8gVMOhYyBE4bulbmcKQ8ahIGNo4bq/IHTDoWMgZOG7pW5nIGNow61uaCBj4bunYSBuaMOzbSB0aHXhu5FjIGtow6FuZyBu4bqlbSBBem9sICh2w60gZOG7pTogS2V0b2NvbmF6b2wsIEZsdWNvbmF6b2wpIGzDoCBnw6w/CkEuIEfhuq9uIHbDoG8gZXJnb3N0ZXJvbCB0csOqbiBtw6BuZyB04bq/IGLDoG8gbuG6pW0sIHThuqFvIHJhIGPDoWMgbOG7lyB0aOG7p25nLgpCLiDhu6hjIGNo4bq/IGVuenltIDE0LWFscGhhLWRlbWV0aHlsYXNlLCBuZ8SDbiBj4bqjbiBxdcOhIHRyw6xuaCB04buVbmcgaOG7o3AgZXJnb3N0ZXJvbC4KQy4g4buoYyBjaOG6vyB04buVbmcgaOG7o3AgKDEtMyktRC1nbHVjYW4sIG3hu5l0IHRow6BuaCBwaOG6p24gY+G7p2EgdGjDoG5oIHThur8gYsOgbyBu4bqlbS4KRC4g4buoYyBjaOG6vyB04buVbmcgaOG7o3AgQUROIGPhu6dhIG7huqVtLgoKxJDDoXAgw6FuIMSRw7puZzogQgpHaeG6o2kgdGjDrWNoOgpDw6FjIHRodeG7kWMgbmjDs20gQXpvbCDhu6ljIGNo4bq/IGVuenltIDE0LWFscGhhLWRlbWV0aHlsYXNlLCBt4buZdCBlbnp5bSBjeXRvY2hyb21lIFA0NTAgY+G7p2EgbuG6pW0uIEVuenltIG7DoHkgY+G6p24gdGhp4bq/dCDEkeG7gyBjaHV54buDbiDEkeG7lWkgbGFub3N0ZXJvbCB0aMOgbmggZXJnb3N0ZXJvbCwgbeG7mXQgdGjDoG5oIHBo4bqnbiBj4bqldSB0csO6YyBxdWFuIHRy4buNbmcgY+G7p2EgbcOgbmcgdOG6vyBiw6BvIG7huqVtLiBWaeG7h2MgdGhp4bq/dSBo4buldCBlcmdvc3Rlcm9sIGzDoG0gcuG7kWkgbG/huqFuIGNo4bupYyBuxINuZyBtw6BuZywgZOG6q24gxJHhur9uIGvDrG0gaMOjbSBz4buxIHBow6F0IHRyaeG7g24gY+G7p2EgbuG6pW0uCgpQaOG6p24gSUk6IFRodeG7kWMgVMOhYyDEkOG7mW5nIEjhu4cgVGjhuqduIEtpbmggVOG7sSBDaOG7pyB2w6AgVGh14buRYyDEkGnhu4F1IFRy4buLIFN1eSBUaW0KQ8OidSAxMzogQ2FzZSBMw6JtIFPDoG5nIC0gU+G7kWMgUGjhuqNuIFbhu4cKTeG7mXQgYuG7h25oIG5ow6JuIMSRxrDhu6NjIMSRxrBhIHbDoG8gY+G6pXAgY+G7qXUgduG7m2kgY2jhuqluIMSRb8OhbiBz4buRYyBwaOG6o24gduG7hywgYmnhu4N1IGhp4buHbiB04buldCBodXnhur90IMOhcCwgY28gdGjhuq90IHBo4bq/IHF14bqjbiB2w6AgcGjDuSB0aGFuaCBxdeG6o24uIFRodeG7kWMgY+G6pXAgY+G7qXUgaMOgbmcgxJHhuqd1IGzDoCBBZHJlbmFsaW4uIFTDoWMgZOG7pW5nIHRvw6BuIGRp4buHbiBj4bunYSBBZHJlbmFsaW4gdHJvbmcgdHLGsOG7nW5nIGjhu6NwIG7DoHkgbMOgIGRvIG7DsyB0w6FjIMSR4buZbmcgbMOqbjoKQS4gQ2jhu4kgcmVjZXB0b3IgzrEx4oCLIMSR4buDIGNvIG3huqFjaC4KQi4gQ2jhu4kgcmVjZXB0b3IgzrIy4oCLIMSR4buDIGdpw6NuIHBo4bq/IHF14bqjbi4KQy4gQ+G6oyByZWNlcHRvciDOsTHigIsgKGNvIG3huqFjaCksIM6yMeKAiyAodMSDbmcgc+G7qWMgY28gYsOzcCB0aW0pIHbDoCDOsjLigIsgKGdpw6NuIHBo4bq/IHF14bqjbikuCkQuIFJlY2VwdG9yIE11c2NhcmluaWMgxJHhu4MgY2jhu5FuZyBs4bqhaSB0w6FjIGThu6VuZyBj4bunYSBo4buHIHBow7MgZ2lhbyBj4bqjbS4KCsSQw6FwIMOhbiDEkcO6bmc6IEMKR2nhuqNpIHRow61jaDoKQWRyZW5hbGluIGzDoCB0aHXhu5FjIGPhu6l1IG3huqFuZyB0cm9uZyBz4buRYyBwaOG6o24gduG7hyB2w6wgbsOzICJob+G6oXQgaMOzYSB04bqldCBj4bqjIGPDoWMgcmVjZXB0b3IgY+G7p2EgaOG7hyBnaWFvIGPhuqNtIi4gVMOhYyBk4bulbmcgbsOgeSBnacO6cCBnaeG6o2kgcXV54bq/dCDEkeG7k25nIHRo4budaSBjw6FjIHbhuqVuIMSR4buBIHNpbmggdOG7rToKVMOhYyBk4bulbmcgdHLDqm4gzrEx4oCLOiBHw6J5IGNvIG3huqFjaCBt4bqhbmgsIGNo4buRbmcgbOG6oWkgc+G7sSBnacOjbiBt4bqhY2ggdG/DoG4gdGjDom4sIHThu6sgxJHDsyBuw6JuZyBodXnhur90IMOhcCB2w6AgZ2nhuqNtIHBow7kgbuG7gS4KVMOhYyBk4bulbmcgdHLDqm4gzrIx4oCLOiBUxINuZyB04bqnbiBz4buRIHbDoCBz4bupYyBjbyBiw7NwIGPGoSB0aW0sIGdpw7pwIHTEg25nIGN1bmcgbMaw4bujbmcgdGltLgpUw6FjIGThu6VuZyB0csOqbiDOsjLigIs6IEfDonkgZ2nDo24gY8ahIHRyxqFuIHBo4bq/IHF14bqjbiBt4bqhbmggbeG6vSwgZ2nhuqNpIHF1eeG6v3QgdMOsbmggdHLhuqFuZyBjbyB0aOG6r3QgcGjhur8gcXXhuqNuIHbDoCBraMOzIHRo4bufLgpDw6J1IDE0OiBUw6FjIEThu6VuZyBLaMO0bmcgTW9uZyBNdeG7kW4KTeG7mXQgYuG7h25oIG5ow6JuIDYwIHR14buVaSBi4buLIHTEg25nIGh1eeG6v3Qgw6FwIHbDoCBjw7MgdGnhu4FuIHPhu60gaGVuIHBo4bq/IHF14bqjbi4gVmnhu4djIHPhu60gZOG7pW5nIHRodeG7kWMgY2jhurluIGJldGEgbsOgbyBzYXUgxJHDonkgbMOgIGNo4buRbmcgY2jhu4kgxJHhu4tuaCB0dXnhu4d0IMSR4buRaT8KQS4gTWV0b3Byb2xvbApCLiBBdGVub2xvbApDLiBQcm9wcmFub2xvbApELiBCaXNvcHJvbG9sCgrEkMOhcCDDoW4gxJHDum5nOiBDCkdp4bqjaSB0aMOtY2g6ClByb3ByYW5vbG9sIGzDoCBt4buZdCB0aHXhu5FjIGNo4bq5biBiZXRhIGtow7RuZyBjaOG7jW4gbOG7jWMsIHThu6ljIGzDoCBuw7Mg4bupYyBjaOG6vyBj4bqjIHJlY2VwdG9yIM6yMeKAiyAo4bufIHRpbSkgdsOgIM6yMuKAiyAo4bufIHBo4bq/IHF14bqjbikuIFZp4buHYyBjaOG6uW4gcmVjZXB0b3IgCs6yMuKAiyDhu58gYuG7h25oIG5ow6JuIGhlbiBwaOG6vyBxdeG6o24gc+G6vSBsw6BtIG3huqV0IHTDoWMgZOG7pW5nIGdpw6NuIHBo4bq/IHF14bqjbiBzaW5oIGzDvSwgY8OzIHRo4buDIGfDonkgcmEgbeG7mXQgY8ahbiBjbyB0aOG6r3QgcGjhur8gcXXhuqNuIGPhuqVwIHTDrW5oIHbDoCBuZ3V5IGhp4buDbS4gRG8gxJHDsywgImhlbiwgQ09QRCIgbMOgIGNo4buRbmcgY2jhu4kgxJHhu4tuaCBj4bunYSBuaMOzbSB0aHXhu5FjIG7DoHkuIEPDoWMgdGh14buRYyBNZXRvcHJvbG9sLCBBdGVub2xvbCwgQmlzb3Byb2xvbCBsw6AgY8OhYyB0aHXhu5FjIGNo4bq5biBiZXRhIGNo4buNbiBs4buNYyB0csOqbiDOsjHigIssIGFuIHRvw6BuIGjGoW4gY2hvIGLhu4duaCBuaMOibiBoZW4gbmjGsG5nIHbhuqtuIGPhuqduIHRo4bqtbiB0cuG7jW5nLgpDw6J1IDE1OiBDxqEgQ2jhur8gdsOgIENo4buRbmcgQ2jhu4kgxJDhu4tuaApBdHJvcGluIGzDoCBt4buZdCB0aHXhu5FjIGtow6FuZyBjaG9saW5lcmdpYy4gVMOhYyBk4bulbmcgZ2nDo24gxJHhu5NuZyB04butIGPhu6dhIG7DsyBjw7MgdGjhu4MgZ8OieSBuZ3V5IGhp4buDbSDhu58gbmjhu69uZyBi4buHbmggbmjDom4gY8OzIHTDrG5oIHRy4bqhbmcgbsOgbyBzYXUgxJHDonk/CkEuIEdsb2NvbSBnw7NjIG3hu58KQi4gR2xvY29tIGfDs2MgxJHDs25nCkMuIMSQ4bulYyB0aOG7p3kgdGluaCB0aOG7gwpELiBWacOqbSBr4bq/dCBt4bqhYwoKxJDDoXAgw6FuIMSRw7puZzogQgpHaeG6o2kgdGjDrWNoOgpBdHJvcGluIGzDoCB0aHXhu5FjIMSR4buRaSBraMOhbmcgY+G6oW5oIHRyYW5oIHbhu5tpIGFjZXR5bGNob2xpbiB04bqhaSByZWNlcHRvciBtdXNjYXJpbmljLCBnw6J5IGdpw6NuIMSR4buTbmcgdOG7rS4g4bueIG5o4buvbmcgYuG7h25oIG5ow6JuIGPDsyBj4bqldSB0csO6YyBnw7NjIHRp4buBbiBwaMOybmcgaOG6uXAgKMSR4bq3YyB0csawbmcgY+G7p2EgZ2xvY29tIGfDs2MgxJHDs25nKSwgdmnhu4djIMSR4buTbmcgdOG7rSBnacOjbiByYSBjw7MgdGjhu4MgbMOgbSBt4buRbmcgbeG6r3QgYuG7iyDEkeG6qXkgduG7gSBwaMOtYSBjaHUgYmnDqm4sIGfDonkgYsOtdCB04bqvYyBjxqEgaOG7jWMgxJHGsOG7nW5nIHRob8OhdCB0aOG7p3kgZOG7i2NoLiDEkGnhu4F1IG7DoHkgZOG6q24gxJHhur9uIHTEg25nIG5ow6NuIMOhcCBj4bqlcCB0w61uaCwgbeG7mXQgdMOsbmggdHLhuqFuZyBj4bqlcCBj4bupdSBuaMOjbiBraG9hLiBEbyDEkcOzLCAiR2xvY29tIGfDs2MgxJHDs25nIiBsw6AgbeG7mXQgY2jhu5FuZyBjaOG7iSDEkeG7i25oIGPhu6dhIEF0cm9waW4uCkPDonUgMTY6IENhc2UgTMOibSBTw6BuZyAtIFRodeG7kWMgR2nDo24gQ8ahClRyb25nIHF1w6EgdHLDrG5oIGto4bufaSBtw6osIGLhu4duaCBuaMOibiDEkcaw4bujYyB0acOqbSBt4buZdCBsb+G6oWkgdGh14buRYyBnacOjbiBjxqEuIELDoWMgc8SpIHF1YW4gc8OhdCB0aOG6pXkgY8OhYyB0aOG7myBjxqEgY28gZ2nhuq10IHRob8OhbmcgcXVhIHRyw6puIGto4bqvcCBjxqEgdGjhu4MgYuG7h25oIG5ow6JuLCBzYXUgxJHDsyBsw6AgdMOsbmggdHLhuqFuZyBsaeG7h3QgbeG7gW0gaG/DoG4gdG/DoG4uIFRodeG7kWMgZ2nDo24gY8ahIG7DoHkgY8OzIGto4bqjIG7Eg25nIGNhbyBuaOG6pXQgbMOgOgpBLiBQYW5jdXJvbml1bQpCLiBSb2N1cm9uaXVtCkMuIFN1Y2NpbnlsY2hvbGluCkQuIGQtVHVib2N1cmFyaW4KCsSQw6FwIMOhbiDEkcO6bmc6IEMKR2nhuqNpIHRow61jaDoKQ8OhYyB0aHXhu5FjIGdpw6NuIGPGoSDEkcaw4bujYyBjaGlhIGzDoG0gaGFpIG5ow7NtLiBTdWNjaW55bGNob2xpbiB0aHXhu5ljIG5ow7NtICJraOG7rSBj4buxYyBxdcOhIG3huqFuaCIuIE7DsyBob+G6oXQgxJHhu5luZyBnaeG7kW5nIG5oxrAgYWNldHlsY2hvbGluLCBnw6J5IHJhIG3hu5l0IHPhu7Ega2jhu60gY+G7sWMgYmFuIMSR4bqndSB04bqhaSBi4bqjbiB24bqtbiDEkeG7mW5nIGPGoSB2w6JuIChiaeG7g3UgaGnhu4duIGzDom0gc8OgbmcgbMOgIGPDoWMgdGjhu5sgY8ahIGNvIGdp4bqtdCksIHNhdSDEkcOzIGR1eSB0csOsIHRy4bqhbmcgdGjDoWkga2jhu60gY+G7sWMgbMOgbSBtw6BuZyBzYXUgc3luYXAgdHLhu58gbsOqbiB0csahLCBk4bqrbiDEkeG6v24gbGnhu4d0IG3hu4FtLiBDw6FjIHRodeG7kWMgY8OybiBs4bqhaSAoUGFuY3Vyb25pdW0sIFJvY3Vyb25pdW0sIGQtVHVib2N1cmFyaW4pIHRodeG7mWMgbmjDs20ga2jDtG5nIGto4butIGPhu7FjICh0cmFuaCBjaOG6pXApLCBjaMO6bmcgcGhvbmcgYuG6vyByZWNlcHRvciBtw6Aga2jDtG5nIGfDonkga2jhu60gY+G7sWMgYmFuIMSR4bqndSwgZG8gxJHDsyBraMO0bmcgZ8OieSByYSBoaeG7h24gdMaw4bujbmcgY28gZ2nhuq10IGPGoS4KQ8OidSAxNzogQ2FzZSBMw6JtIFPDoG5nIC0gTmfhu5kgxJDhu5ljCk3hu5l0IG7DtG5nIGTDom4gbmjhuq1wIHZp4buHbiB24bubaSBjw6FjIHRyaeG7h3UgY2jhu6luZyBj4bunYSBo4buZaSBjaOG7qW5nIGPGsOG7nW5nIGNob2xpbmVyZ2ljICjEkeG7k25nIHThu60gY28sIHTEg25nIHRp4bq/dCBk4buLY2gsIG5o4buLcCB0aW0gY2jhuq1tKSBzYXUga2hpIHBodW4gdGh14buRYyB0cuG7qyBzw6J1LiBDaOG6qW4gxJFvw6FuIGzDoCBuZ+G7mSDEkeG7mWMgcGhvc3BobyBo4buvdSBjxqEuIFBow6FjIMSR4buTIMSRaeG7gXUgdHLhu4sgxJHhurdjIGhp4buHdSBiYW8gZ+G7k206CkEuIENo4buJIGTDuW5nIEF0cm9waW4gbGnhu4F1IGNhby4KQi4gQ2jhu4kgZMO5bmcgUHJhbGlkb3hpbSAoUEFNKS4KQy4gS+G6v3QgaOG7o3AgQXRyb3BpbiB2w6AgUHJhbGlkb3hpbSAoUEFNKS4KRC4gQWRyZW5hbGluIHbDoCB0aHXhu5FjIGzhu6NpIHRp4buDdS4KCsSQw6FwIMOhbiDEkcO6bmc6IEMKR2nhuqNpIHRow61jaDoKUGhvc3BobyBo4buvdSBjxqEg4bupYyBjaOG6vyBraMO0bmcgaOG7k2kgcGjhu6VjIGVuenltIGNob2xpbmVzdGVyYXNlLCBnw6J5IHTDrWNoIGzFqXkgYWNldHlsY2hvbGluLiDEkGnhu4F1IHRy4buLIMSRw7JpIGjhu49pIGhhaSBjxqEgY2jhur86CkF0cm9waW46IEzDoCB0aHXhu5FjIGjhu6d5IGjhu4cgTSwgxJHhu5FpIGtow6FuZyB24bubaSB0w6FjIGThu6VuZyBj4bunYSBhY2V0eWxjaG9saW4gZMawIHRo4burYSB04bqhaSBjw6FjIHJlY2VwdG9yIG11c2NhcmluaWMsIGdpw7pwIGtp4buDbSBzb8OhdCBjw6FjIHRyaeG7h3UgY2jhu6luZyBuaMawIGNvIMSR4buTbmcgdOG7rSwgdMSDbmcgdGnhur90IGThu4tjaCwgbmjhu4twIHRpbSBjaOG6rW0uClByYWxpZG94aW0gKFBBTSk6IEzDoCBt4buZdCAidGh14buRYyBob+G6oXQgaMOzYSBjaG9saW5lc3RlcmFzZSIsIGPDsyBraOG6oyBuxINuZyB0w6FjaCBwaG9zcGhvIGjhu691IGPGoSByYSBraOG7j2kgZW56eW0sIHBo4bulYyBo4buTaSBs4bqhaSBjaOG7qWMgbsSDbmcgY+G7p2EgZW56eW0uIE7DsyBnaeG6o2kgcXV54bq/dCBuZ3V5w6puIG5ow6JuIGfhu5FjIHLhu4UgdsOgIMSR4bq3YyBiaeG7h3QgcXVhbiB0cuG7jW5nIMSR4buDIMSR4bqjbyBuZ8aw4bujYyB0w6xuaCB0cuG6oW5nIHnhur91IGPGoSB2w6AgbGnhu4d0IGPGoSBow7QgaOG6pXAgKHRyaeG7h3UgY2jhu6luZyBuaWNvdGluaWMpLgpDw6J1IDE4OiBDYXNlIEzDom0gU8OgbmcgLSBTdXkgVGltCk3hu5l0IGLhu4duaCBuaMOibiA3NSB0deG7lWkgYuG7iyBzdXkgdGltIG3huqFuLCBwaMOibiBzdeG6pXQgdOG7kW5nIG3DoXUgZ2nhuqNtLCBrw6htIHRoZW8gcnVuZyBuaMSpIHbhu5tpIMSRw6FwIOG7qW5nIHRo4bqldCBuaGFuaC4gVGh14buRYyBuw6BvIHNhdSDEkcOieSB24burYSBjw7MgdMOhYyBk4bulbmcgdMSDbmcgc+G7qWMgY28gYsOzcCBjxqEgdGltIChpbm90cm9wZSBkxrDGoW5nKSB24burYSBnacO6cCBsw6BtIGNo4bqtbSB04bqnbiBz4buRIHRo4bqldD8KQS4gTWV0b3Byb2xvbApCLiBGdXJvc2VtaWRlCkMuIERvYnV0YW1pbgpELiBEaWdveGluCgrEkMOhcCDDoW4gxJHDum5nOiBECkdp4bqjaSB0aMOtY2g6CkRpZ294aW4gY8OzIG3hu5l0IGPGoSBjaOG6vyB0w6FjIGThu6VuZyBrw6lwIMSR4buZYyDEkcOhby4gTsOzIGzDoG0gdGltICLEkeG6rXAgbeG6oW5oLCBjaOG6rW0sIMSR4buBdSIuIFTDoWMgZOG7pW5nICJt4bqhbmgiIGzDoCBkbyDhu6ljIGNo4bq/IGLGoW0gCk5hK+KIkksr4oiSQVRQYXNlLCBsw6BtIHTEg25nIGNhbGNpIG7hu5lpIGLDoG8gdsOgIHTEg25nIHPhu6ljIGNvIGLDs3AgY8ahIHRpbS4gVMOhYyBk4bulbmcgImNo4bqtbSIgbMOgIGRvIGzDoG0gdMSDbmcgdHLGsMahbmcgbOG7sWMgcGjDsyBnaWFvIGPhuqNtLCBsw6BtIGNo4bqtbSBk4bqrbiB0cnV54buBbiBxdWEgbsO6dCBuaMSpIHRo4bqldCwgdOG7qyDEkcOzIGdpw7pwIGtp4buDbSBzb8OhdCB04bqnbiBz4buRIHRo4bqldCB0cm9uZyBydW5nIG5oxKkuIFPhu7Ega+G6v3QgaOG7o3AgbsOgeSBsw6BtIGNobyBEaWdveGluIHRy4bufIHRow6BuaCBs4buxYSBjaOG7jW4gxJHhurdjIGJp4buHdCBo4buvdSDDrWNoIGNobyBi4buHbmggbmjDom4gc3V5IHRpbSBrw6htIHJ1bmcgbmjEqSDEkcOhcCDhu6luZyB0aOG6pXQgbmhhbmguQ8OidSAxOTogVMawxqFuZyBUw6FjIFRodeG7kWMgdsOgIMSQ4buZYyBUw61uaApN4buZdCBi4buHbmggbmjDom4gxJFhbmcgxJFp4buBdSB0cuG7iyBi4bqxbmcgRGlnb3hpbiB2w6AgdGh14buRYyBs4bujaSB0aeG7g3UgRnVyb3NlbWlkZS4gQuG7h25oIG5ow6JuIGPDsyBiaeG7g3UgaGnhu4duIG5n4buZIMSR4buZYyBEaWdveGluIChideG7k24gbsO0biwgbmjDrG4gbeG7nSwgbG/huqFuIG5o4buLcCkuIFLhu5FpIGxv4bqhbiDEkWnhu4duIGdp4bqjaSBuw6BvIGRvIEZ1cm9zZW1pZGUgZ8OieSByYSBsw6AgeeG6v3UgdOG7kSBuZ3V5IGPGoSBjaMOtbmg/CkEuIFTEg25nIE5hdHJpIG3DoXUKQi4gSOG6oSBLYWxpIG3DoXUKQy4gVMSDbmcgS2FsaSBtw6F1CkQuIEjhuqEgQ2FsY2kgbcOhdQoKxJDDoXAgw6FuIMSRw7puZzogQgpHaeG6o2kgdGjDrWNoOgpGdXJvc2VtaWRlIGzDoCB0aHXhu5FjIGzhu6NpIHRp4buDdSBxdWFpIGfDonkgbeG6pXQga2FsaSBxdWEgbsaw4bubYyB0aeG7g3UsIGThuqtuIMSR4bq/biBo4bqhIGthbGkgbcOhdS4gS2FsaSB2w6AgRGlnb3hpbiBj4bqhbmggdHJhbmggduG7m2kgbmhhdSDEkeG7gyBn4bqvbiB2w6BvIGPDuW5nIG3hu5l0IHbhu4sgdHLDrSB0csOqbiBixqFtIE5hK+KIkksr4oiSQVRQYXNlLiBLaGkgbuG7k25nIMSR4buZIGthbGkgdHJvbmcgbcOhdSB0aOG6pXAsIERpZ294aW4gc+G6vSBk4buFIGTDoG5nIGfhuq9uIHbDoG8gYsahbSBoxqFuLCBsw6BtIHTEg25nIHTDoWMgZOG7pW5nIHbDoCDEkeG7mWMgdMOtbmggY+G7p2EgbsOzLiBUw6BpIGxp4buHdSBnaGkgcsO1ICJS4buRaSBsb+G6oW4gxJFp4buHbiBnaeG6o2k6IEjhuqEgS2FsaSBtw6F1IiBsw6AgbeG7mXQgbmd1ecOqbiBuaMOibiBnw6J5IMSR4buZYyB0w61uaCBj4bunYSBEaWdveGluLgpDw6J1IDIwOiBDaGnhur9uIEzGsOG7o2MgxJBp4buBdSBUcuG7iyBTdXkgVGltClRyb25nIMSRaeG7gXUgdHLhu4sgc3V5IHRpbSBt4bqhbiwgdGh14buRYyDhu6ljIGNo4bq/IG1lbiBjaHV54buDbiAoQUNFSSkgdsOgIHRodeG7kWMgY2jhurluIGJldGEgxJHGsOG7o2MgY29pIGzDoCBsaeG7h3UgcGjDoXAgbuG7gW4gdOG6o25nIGdpw7pwIGPhuqNpIHRoaeG7h24gdGnDqm4gbMaw4bujbmcgbMOidSBkw6BpLiBDxqEgY2jhur8gY2jDrW5oIGPhu6dhIGNow7puZyBsw6AgZ8OsPwpBLiBUxINuZyB0cuG7sWMgdGnhur9wIHPhu6ljIGNvIGLDs3AgY8ahIHRpbS4KQi4gR2nhuqNtIG5oYW5oIHRp4buBbiBnw6FuaCB2w6AgaOG6rXUgZ8OhbmguCkMuIFBob25nIHThu49hIGPDoWMgaOG7hyB0aOG7kW5nIHRo4bqnbiBraW5oLXRo4buDIGThu4tjaCAoUkFBUyB2w6AgZ2lhbyBj4bqjbSkgYuG7iyBob+G6oXQgaMOzYSBxdcOhIG3hu6ljLCBuZ8SDbiBjaOG6t24gdMOhaSBj4bqldSB0csO6YyB0aW0uCkQuIFTEg25nIHRo4bqjaSB0cuG7qyBtdeG7kWkgdsOgIG7GsOG7m2MuCgrEkMOhcCDDoW4gxJHDum5nOiBDCkdp4bqjaSB0aMOtY2g6Ckzhu6NpIMOtY2ggbMOidSBkw6BpIGPhu6dhIEFDRUkgdsOgIGNo4bq5biBiZXRhIHRyb25nIHN1eSB0aW0gxJHhur9uIHThu6sga2jhuqMgbsSDbmcgY2jhu5FuZyBs4bqhaSBz4buxIGhv4bqhdCBow7NhIHRo4bqnbiBraW5oLXRo4buDIGThu4tjaCBjw7MgaOG6oWkuIEtoaSBzdXkgdGltLCBo4buHIFJlbmluLUFuZ2lvdGVuc2luLUFsZG9zdGVyb25lIChSQUFTKSB2w6AgaOG7hyBnaWFvIGPhuqNtIGLhu4sga8OtY2ggaG/huqF0IHF1w6EgbeG7qWMsIGThuqtuIMSR4bq/biBjbyBt4bqhY2gsIGdp4buvIG114buRaSBuxrDhu5tjIHbDoCBxdWFuIHRy4buNbmcgbmjhuqV0IGzDoCBnw6J5IHJhIHF1w6EgdHLDrG5oIHTDoWkgY+G6pXUgdHLDumMgdGltIChwaMOsIMSR4bqhaSwgeMahIGjDs2EpLiBBQ0VJIHBob25nIHThu49hIGjhu4cgUkFBUyB2w6AgdGh14buRYyBjaOG6uW4gYmV0YSBwaG9uZyB04buPYSBo4buHIGdpYW8gY+G6o20uIELhurFuZyBjw6FjaCBuw6B5LCBjaMO6bmcgbMOgbSBjaOG6rW0gaG/hurdjIMSR4bqjbyBuZ8aw4bujYyBxdcOhIHRyw6xuaCB0w6FpIGPhuqV1IHRyw7pjIHRpbSwgdOG7qyDEkcOzIGPhuqNpIHRoaeG7h24gY2jhu6ljIG7Eg25nIHRpbSB2w6AgZ2nhuqNtIHThu7cgbOG7hyB04butIHZvbmcuCg==</script>
+<script type="text/babel">
+
+const { useState, useEffect, useRef } = React;
+
+function parseQuizData(text) {
+    const lines = text.split('\n').map(l => l.trim()).filter(l => l);
+    const questions = [];
+    let currentQ = null;
+    let currentMode = 'context';
+    let currentContext = "";
+    let isBuildingContext = false;
+
+    lines.forEach(line => {
+        line = line.replace(/^[\u2022\u00b7\-\*]\s*/, '').trim();
+        if (!line) return;
+
+        const isSection = line.match(/^(?:PHẦN|Phần)\s+[I|V|X|\d]+/i);
+        if (isSection) {
+            currentContext = "";
+            isBuildingContext = false;
+        }
+
+        const isCaseStart = line.match(/^(?:TÌNH HUỐNG LÂM SÀNG|Case lâm sàng|Tình huống|Case\s*\d+)/i);
+        const isQ = line.match(/^(?:Câu|Question)[^\d]*([\d\.]+)(?:[^a-z0-9]*[:\.\-])?\s*(.*)/i);
+        const isOpt = line.match(/^([A-E])[\.\)\:\-\/]\s*(.*)/i);
+        const isAns = line.match(/^(?:Đáp án(?: đúng)?|Answer)\s*[:\.\-]?\s*([A-E])/i);
+
+        if (isCaseStart && !isQ) {
+            if (currentMode === 'question') {
+                currentQ.question += (currentQ.question ? '\n' : '') + line;
+                return;
+            }
+            currentContext = line + '\n';
+            isBuildingContext = true;
+            currentMode = 'context';
+            return;
+        }
+
+        if (isQ && !isAns) {
+            isBuildingContext = false;
+            if (currentQ) questions.push(currentQ);
+            
+            currentQ = { 
+                id: questions.length + 1, 
+                originalId: isQ[1], 
+                context: currentContext.trim(), 
+                question: isQ[2] || '', 
+                options: {}, 
+                answer: '' 
+            };
+            currentMode = 'question';
+            return;
+        }
+
+        if (isAns && currentQ) {
+            currentQ.answer = isAns[1].toUpperCase();
+            currentMode = 'skip';
+            return;
+        }
+        
+        if (line.match(/^(Giải thích|Tại sao các lựa chọn khác|Tài liệu được biên soạn|Nghiêm cấm sao chép|Đúng:|Sai:|Đáp án và Giải thích)/i)) {
+            currentMode = 'skip';
+            return;
+        }
+
+        if (currentMode === 'skip') return;
+
+        if (isBuildingContext) {
+            if (!line.match(/^(TRẮC NGHIỆM|BASEDOW|BỆNH LÝ BASEDOW|HỘI CHỨNG|ĐỘT QUỴ|ĐỘNG KINH|COPD|ĐÁI MÁU|NỘI KHOA|TEAMDRCAT|==========|Tài liệu được|Nghiêm cấm|\[🛑)/i)) {
+                currentContext += line + '\n';
+            }
+            return;
+        }
+
+        if (currentQ) {
+            if (isOpt) {
+                currentQ.options[isOpt[1].toUpperCase()] = isOpt[2].trim();
+                currentMode = 'options';
+            } else if (currentMode === 'question') {
+                currentQ.question += '\n' + line;
+            } else if (currentMode === 'options') {
+                const keys = Object.keys(currentQ.options);
+                if (keys.length > 0) {
+                    const lastKey = keys[keys.length - 1];
+                    currentQ.options[lastKey] += '\n' + line;
+                }
+            } 
+        }
+    });
+    if (currentQ) questions.push(currentQ);
+    const cln = (s) => (s||'').replace(/\\n\\n/gi, ' ').replace(/\\n/gi, ' ').trim();
+    questions.forEach(q => { if(q.context) q.context=cln(q.context); if(q.question) q.question=cln(q.question); for(let k in q.options) q.options[k]=cln(q.options[k]); });
+    return questions;
+}
+
+const playCorrectSound = () => {
+    try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(600, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.15);
+    } catch (e) { console.error(e); }
+};
+
+const playIncorrectSound = () => {
+    try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(300, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(150, ctx.currentTime + 0.2);
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.2);
+    } catch (e) { console.error(e); }
+};
+
+
+const RealTimeClock = () => {
+    const [time, setTime] = React.useState(new Date());
+    React.useEffect(() => {
+        const timer = setInterval(() => setTime(new Date()), 1000);
+        return () => clearInterval(timer);
+    }, []);
+    const formatTime = (date) => {
+        const d = date.getDay();
+        const days = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
+        const dayStr = days[d];
+        const dateStr = date.toLocaleDateString('vi-VN', {day:'2-digit', month:'2-digit', year:'numeric'});
+        const timeStr = date.toLocaleTimeString('vi-VN', {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+        return `${timeStr} - ${dayStr}, ${dateStr}`;
+    };
+    return (
+        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 font-mono text-xs font-bold shadow-sm">
+            <i className="fa-regular fa-clock text-rose-500"></i>
+            {formatTime(time)}
+        </div>
+    );
+};
+
+
+const GoogleSearch = () => {
+    const [query, setQuery] = React.useState('');
+    const [isOpen, setIsOpen] = React.useState(false);
+    const inputRef = React.useRef(null);
+
+    React.useEffect(() => {
+        if (isOpen && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [isOpen]);
+
+    const handleSearch = (e) => {
+        e.preventDefault();
+        if(query.trim()) {
+            window.open(`https://www.google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+            setQuery('');
+            setIsOpen(false);
+        }
+    };
+
+    return (
+        <div className="relative z-50">
+            <button onClick={() => setIsOpen(!isOpen)} className={`p-2 rounded-xl transition-all duration-300 border shadow-sm ${isOpen ? 'bg-blue-100 dark:bg-blue-900/50 border-rose-300 dark:border-blue-700 text-blue-600 dark:text-blue-400' : 'bg-white/60 dark:bg-slate-700/60 hover:bg-white dark:hover:bg-slate-600 border-white/40 dark:border-slate-600/50 text-slate-600 dark:text-slate-300'}`} title="Tra cứu Google">
+                <i className="fa-brands fa-google text-base"></i>
+            </button>
+            {isOpen && (
+                <React.Fragment>
+                    <div className="fixed inset-0 z-[998] cursor-pointer" onTouchStart={(e) => { e.preventDefault(); setIsOpen(false); }} onMouseDown={(e) => { e.preventDefault(); setIsOpen(false); }}></div>
+                    <div className="fixed left-4 right-4 top-24 sm:absolute sm:left-auto sm:right-0 sm:top-full mt-3 p-3 glass-panel rounded-2xl shadow-2xl border border-white/60 dark:border-slate-700/60 sm:w-[350px] z-[999] animate-in fade-in slide-in-from-top-2 duration-300">
+                    <form onSubmit={handleSearch} className="flex items-center gap-2">
+                        <div className="relative flex-1">
+                            <i className="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                            <input 
+                                ref={inputRef}
+                                type="text" 
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)}
+                                placeholder="Tra cứu Google y khoa..." 
+                                className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 dark:border-slate-600 bg-white/90 dark:bg-slate-800/90 focus:ring-2 focus:ring-blue-500 focus:border-rose-500 outline-none text-base text-slate-700 dark:text-slate-200 font-medium transition-all shadow-inner"
+                            />
+                        </div>
+                        <button type="submit" className="p-2.5 btn-gradient text-white rounded-xl shadow-md hover:-translate-y-0.5 transition-transform"><i className="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                    <div className="mt-2 text-[10px] text-center text-slate-400 dark:text-slate-500 font-semibold uppercase tracking-widest">Mở trong Tab mới</div>
+                <button type="button" onClick={() => setIsOpen(false)} className="mt-3 w-full border border-red-200 bg-red-50 text-red-500 dark:bg-red-900/40 dark:border-red-800 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-red-100 transition-colors shadow-sm">Đóng Tìm Kiếm <i className="fas fa-times ml-1"></i></button>
+                </div>
+                </React.Fragment>
+            )}
+        </div>
+    );
+};
+
+function App() {
+    const [appState, setAppState] = useState('locked');
+    const [passwordInput, setPasswordInput] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [pwError, setPwError] = useState(false);
+    const [unlockCountdown, setUnlockCountdown] = useState(3);
+    const [questions, setQuestions] = useState([]);
+    const diseaseName = document.title.replace('NỘI KHOA: ', '').replace(' - TEAMDRCAT', '').replace('TEAMDRCAT | ', '').trim() || 'LÂM SÀNG';
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [answers, setAnswers] = useState({});
+    const [flagged, setFlagged] = useState(new Set());
+    const [timeRemaining, setTimeRemaining] = useState(0); 
+    const [showMatrix, setShowMatrix] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
+        const [isDarkMode, setIsDarkMode] = useState(false);
+    const [showDrNote, setShowDrNote] = useState(false);
+    const [drNoteContent, setDrNoteContent] = useState("");
+    const [notePos, setNotePos] = useState({x: window.innerWidth - 320, y: 100});
+    const [isSoundEnabled, setIsSoundEnabled] = useState(true);
+      const [zoomLevel, setZoomLevel] = useState(100);
+    
+    const scrollContainerRef = useRef(null);
+    const [vantaEffect, setVantaEffect] = useState(null);
+    
+        useEffect(() => {
+        const rootEl = document.getElementById('root');
+        if (!vantaEffect && window.VANTA && window.VANTA.NET && rootEl) {
+            try {
+                if (window.innerWidth < 1025) return; 
+                const isMobile = window.innerWidth < 768;
+                /* Vanta completely disabled */
+            
+            } catch(e) {
+                console.warn("Vanta initialize skipped", e);
+            }
+        }
+        return () => {
+            if (vantaEffect) vantaEffect.destroy();
+        }
+    }, [vantaEffect]);
+
+    useEffect(() => {
+        if (vantaEffect && typeof vantaEffect.setOptions === 'function') {
+            try {
+                vantaEffect.setOptions({
+                    color: isDarkMode ? 0x22d3ee : 0x0284c7,
+                    backgroundColor: isDarkMode ? 0x020617 : 0xf0f9ff
+                })
+            } catch(e) {}
+        }
+    }, [isDarkMode, vantaEffect]);
+
+
+    const playHeartbeatSound = () => {
+        try {
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContext) return;
+            const ctx = new AudioContext();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(60, ctx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.1);
+            gain.gain.setValueAtTime(0.5, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+            osc.start(ctx.currentTime);
+            osc.stop(ctx.currentTime + 0.2);
+        } catch (e) { }
+    };
+
+    useEffect(() => {
+        function b64DecodeUnicode(str) {
+            return decodeURIComponent(atob(str).split('').map(function(c) {
+                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+            }).join(''));
+        }
+        const rawB64 = document.getElementById('quizData').textContent.trim() || '';
+        let rawData = '';
+        try { rawData = b64DecodeUnicode(rawB64); } catch(e) { rawData = rawB64; }
+        const parsedQs = parseQuizData(rawData);
+        setQuestions(parsedQs);
+        
+        const unlockKey = 'teamdrcat_unlocked_' + document.title;
+        if (localStorage.getItem(unlockKey) === 'true') {
+            setAppState('intro');
+        }
+        
+        const storageKey = 'teamdrcat_' + document.title;
+        const saved = localStorage.getItem(storageKey);
+        if(saved) {
+            try {
+                const data = JSON.parse(saved);
+                setAnswers(data.answers || {});
+                setFlagged(new Set(data.flagged || []));
+                if (data.timeRemaining) setTimeRemaining(data.timeRemaining);
+                else setTimeRemaining(parsedQs.length * 60);
+                if (data.currentIndex) setCurrentIndex(data.currentIndex);
+                if (data.drNoteContent) setDrNoteContent(data.drNoteContent);
+            } catch(e) {
+                setTimeRemaining(parsedQs.length * 60);
+            }
+        } else {
+            setTimeRemaining(parsedQs.length * 60);
+        }
+    }, []);
+
+    useEffect(() => {
+        const preventDefault = (e) => e.preventDefault();
+        const preventKeyboard = (e) => {
+            if (e.keyCode === 123) e.preventDefault();
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) e.preventDefault();
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) e.preventDefault();
+            if (e.ctrlKey && e.keyCode === 85) e.preventDefault();
+            if (e.ctrlKey && e.keyCode === 83) e.preventDefault();
+        };
+        document.addEventListener('contextmenu', preventDefault);
+        document.addEventListener('keydown', preventKeyboard);
+        document.addEventListener('dragstart', preventDefault);
+        return () => {
+            document.removeEventListener('contextmenu', preventDefault);
+            document.removeEventListener('keydown', preventKeyboard);
+            document.removeEventListener('dragstart', preventDefault);
+        }
+    }, []);
+
+    useEffect(() => {
+        if(questions.length > 0 && appState === 'quiz') {
+            const storageKey = 'teamdrcat_' + document.title;
+            localStorage.setItem(storageKey, JSON.stringify({
+                answers: answers,
+                flagged: Array.from(flagged),
+                timeRemaining: timeRemaining,
+                currentIndex: currentIndex,
+                drNoteContent: drNoteContent
+            }));
+        }
+    }, [answers, flagged, timeRemaining, questions.length, appState, currentIndex, drNoteContent]);
+
+    useEffect(() => {
+        if (appState === 'result' && scrollContainerRef.current) {
+            scrollContainerRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [appState]);
+
+    useEffect(() => {
+        let timer;
+        if (appState === 'quiz' && !isPaused && timeRemaining > 0) {
+            timer = setInterval(() => {
+                setTimeRemaining(p => {
+                    if (p <= 10 && p > 0 && isSoundEnabled) playHeartbeatSound();
+                    return p - 1;
+                });
+            }, 1000);
+        } else if (timeRemaining <= 0 && appState === 'quiz') {
+            setAppState('result');
+        }
+        
+        return () => clearInterval(timer);
+    }, [appState, timeRemaining, isPaused, isSoundEnabled]);
+
+    useEffect(() => {
+        if (appState === 'unlocking') {
+            if (unlockCountdown > 0) {
+                const timer = setTimeout(() => {
+                    setUnlockCountdown(c => c - 1);
+                    if (isSoundEnabled) playCorrectSound();
+                }, 1000);
+                return () => clearTimeout(timer);
+            } else {
+                setAppState('intro');
+            }
+        }
+    }, [appState, unlockCountdown, isSoundEnabled]);
+
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if(appState !== 'quiz' || isPaused) return;
+            if(e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+            
+            const q = questions[currentIndex];
+            if(!q) return;
+            const optKeys = Object.keys(q.options);
+            const keyMap = {'1':0, '2':1, '3':2, '4':3, 'a':0, 'b':1, 'c':2, 'd':3};
+            const mappedIdx = keyMap[e.key.toLowerCase()];
+            
+            if(mappedIdx !== undefined && mappedIdx < optKeys.length) {
+                const selectedKey = optKeys[mappedIdx];
+                if (!answers[currentIndex]) {
+                    setAnswers(prev => ({ ...prev, [currentIndex]: selectedKey }));
+                    if (isSoundEnabled) {
+                        q.answer === selectedKey ? playCorrectSound() : playIncorrectSound();
+                    }
+                }
+            }
+            if(e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                e.preventDefault();
+                setCurrentIndex(p => Math.min(questions.length - 1, p + 1));
+            }
+            if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                e.preventDefault();
+                setCurrentIndex(p => Math.max(0, p - 1));
+            }
+            if(e.key === ' ' || e.code === 'Space') {
+                e.preventDefault();
+                setFlagged(prev => {
+                    const newFlagged = new Set(prev);
+                    if (newFlagged.has(currentIndex)) newFlagged.delete(currentIndex);
+                    else newFlagged.add(currentIndex);
+                    return newFlagged;
+                });
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [appState, isPaused, currentIndex, questions, answers, isSoundEnabled]);
+
+    useEffect(() => {
+        if (isDarkMode) document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+    }, [isDarkMode]);
+
+      useEffect(() => {
+          document.documentElement.style.fontSize = `${zoomLevel}%`;
+      }, [zoomLevel]);
+
+    const formatTime = (seconds) => {
+        const h = Math.floor(seconds / 3600);
+        const m = Math.floor((seconds % 3600) / 60);
+        const s = seconds % 60;
+        if (h > 0) return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    };
+
+    const startQuiz = () => {
+        if (questions.length === 0) {
+            alert("Lỗi tải dữ liệu câu hỏi. Vui lòng kiểm tra lại file data.");
+            return;
+        }
+        setAppState('quiz');
+        // Restart logic
+        if(Object.keys(answers).length === questions.length) {
+            setAnswers({}); setFlagged(new Set()); setTimeRemaining(questions.length * 60); setCurrentIndex(0);
+        }
+        setIsPaused(false);
+    };
+
+    const restartQuiz = () => {
+        setAppState('intro');
+        setAnswers({});
+        setFlagged(new Set());
+        setTimeRemaining(questions.length * 60);
+        setCurrentIndex(0);
+        setShowMatrix(false);
+        const storageKey = 'teamdrcat_' + document.title;
+        localStorage.removeItem(storageKey);
+        if (scrollContainerRef.current) scrollContainerRef.current.scrollTo({ top: 0 });
+    };
+
+    const togglePause = () => {
+        if (appState === 'quiz') setIsPaused(!isPaused);
+    };
+
+    const handleSelectAnswer = (key) => {
+        if (isSoundEnabled) {
+            try {
+                const a = new Audio("https://actions.google.com/sounds/v1/foley/pen_click.ogg");
+                a.volume = 0.5;
+                a.play().catch(e=>{});
+            } catch(e){}
+        }
+        if (answers[currentIndex] || appState !== 'quiz' || isPaused) return;
+        
+        const isCorrect = questions[currentIndex].answer === key;
+        if (isSoundEnabled) {
+            if (isCorrect) {
+                playCorrectSound();
+            } else {
+                playIncorrectSound();
+            }
+        }
+        
+        setAnswers(prev => ({ ...prev, [currentIndex]: key }));
+    };
+
+    const toggleFlag = () => {
+        const newFlagged = new Set(flagged);
+        if (newFlagged.has(currentIndex)) newFlagged.delete(currentIndex);
+        else newFlagged.add(currentIndex);
+        setFlagged(newFlagged);
+    };
+
+    const calculateScore = () => questions.reduce((acc, q, i) => (answers[i] === q.answer ? acc + 1 : acc), 0);
+
+    const getEncouragement = () => {
+        if (questions.length === 0) return null;
+        const score = calculateScore();
+        const percent = score / questions.length;
+        if (percent >= 0.9) return { title: "BÁC SĨ CHUYÊN KHOA CẤP CAO", text: "Vinh danh bạn! Chẩn đoán vô cùng chính xác và hoàn hảo.", icon: "fa-award", color: "text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900/40 border-blue-400" };
+        if (percent >= 0.7) return { title: "BÁC SĨ NỘI TRÚ XUẤT SẮC", text: "Tuyệt vời. Tư duy lâm sàng của bạn rất vững.", icon: "fa-stethoscope", color: "text-cyan-600 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-900/40 border-cyan-400" };
+        if (percent >= 0.5) return { title: "THỰC TẬP SINH TRIỂN VỌNG", text: "Có nền tảng. Cần nạp thêm kiến thức để xử lý ca phức tạp nhé!", icon: "fa-user-nurse", color: "text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-900/40 border-emerald-400" };
+        return { title: "CẤP CỨU VIÊN TẬP SỰ", text: "Mức độ khẩn cấp! Kỹ năng trực giác chưa đủ, bạn cần học bài ngay!", icon: "fa-truck-medical", color: "text-rose-600 dark:text-rose-400 bg-rose-50 dark:bg-rose-900/40 border-rose-400" };
+    };
+
+    
+    const renderQuizContent = () => {
+        if (isPaused) {
+            return (
+                <div className="glass-panel rounded-3xl p-16 text-center shadow-2xl animate-in fade-in zoom-in duration-300 mt-10 relative z-10">
+                    <div className="w-24 h-24 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
+                        <i className="fa-solid fa-pause text-5xl"></i>
+                    </div>
+                    <h2 className="text-3xl font-black text-slate-800 dark:text-slate-100 mb-4">Bài thi đang tạm dừng</h2>
+                    <button onClick={togglePause} className="btn-gradient text-white px-12 py-4 rounded-2xl font-bold text-xl shadow-lg shadow-blue-300/50 dark:shadow-none hover:shadow-blue-400/50 transition-all">Tiếp tục ngay</button>
+                </div>
+            );
+        }
+
+        if (appState === 'result') {
+            const msg = getEncouragement();
+            const percent = questions.length > 0 ? calculateScore() / questions.length : 0;
+            return (
+                <div className="space-y-8 animate-in slide-in-from-bottom-8 duration-500 mt-4 relative z-10">
+                    <div className="glass-panel p-8 md:p-12 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
+                        
+                        <div className="relative bg-[#0b1221] dark:bg-black p-8 rounded-[2rem] mb-12 shadow-2xl overflow-hidden border border-slate-700/50">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-rose-500/10 rounded-full blur-3xl"></div>
+                            <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan-500/10 rounded-full blur-3xl"></div>
+                            
+                            <div className="flex flex-col md:flex-row items-center justify-between relative z-10">
+                                <div className="flex items-center gap-6 text-left w-full md:w-auto">
+                                    <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white shadow-[0_0_30px_rgba(59,130,246,0.3)] shrink-0">
+                                        <i className="fa-solid fa-heart-pulse text-4xl"></i>
+                                    </div>
+                                    <div>
+                                        <h2 className="text-rxl md:text-3xl font-black text-white tracking-tight uppercase mb-1">Báo Cáo Hội Chẩn</h2>
+                                        <div className="flex items-center gap-3 flex-wrap">
+                                            <span className="text-blue-400 font-bold uppercase tracking-widest text-xs">TeamDrCat E-Health</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="mt-6 md:mt-0 w-full md:w-auto flex justify-end">
+                                    {percent < 0.5 ? (
+                                        <div className="px-5 py-2.5 rounded-xl bg-red-500/10 border border-red-500/30 text-red-500 font-black text-sm uppercase tracking-widest flex items-center gap-3 shadow-[0_0_15px_rgba(239,68,68,0.2)]">
+                                            <div className="relative flex items-center justify-center w-3 h-3"><span className="absolute w-3 h-3 rounded-full bg-red-500 animate-ping"></span><span className="relative w-2 h-2 rounded-full bg-red-500"></span></div>
+                                            KHẨN CẤP
+                                        </div>
+                                    ) : (percent < 0.8 ? (
+                                        <div className="px-5 py-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 font-black text-sm uppercase tracking-widest flex items-center gap-3 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                                            TRUNG BÌNH
+                                        </div>
+                                    ) : (
+                                        <div className="px-5 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-black text-sm uppercase tracking-widest flex items-center gap-3 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                                            THÔNG THƯỜNG
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-12 mb-12 w-full">
+                            <div className="relative shrink-0">
+                                <svg className="w-56 h-56 transform -rotate-90">
+                                    <circle cx="112" cy="112" r="90" stroke="currentColor" strokeWidth="16" fill="transparent" className="text-slate-100 dark:text-slate-800" />
+                                    <circle cx="112" cy="112" r="90" stroke="currentColor" strokeWidth="16" fill="transparent"
+                                        strokeDasharray="565.48"
+                                        strokeDashoffset={565.48 - (percent * 565.48)}
+                                        strokeLinecap="round"
+                                        className="text-rose-500 drop-shadow-[0_0_15px_rgba(59,130,246,0.6)] transition-all duration-[2000ms] ease-out" />
+                                </svg>
+                                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                                    <span className="text-6xl font-black bg-clip-text text-transparent bg-gradient-to-br from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300 drop-shadow-sm">{calculateScore()}</span>
+                                    <span className="text-sm font-bold text-slate-400 uppercase tracking-widest mt-1">/ {questions.length} ĐIỂM</span>
+                                </div>
+                            </div>
+                            
+                            {msg && (
+                                <div className={`p-8 rounded-[2rem] border min-w-[300px] max-w-md w-full flex flex-col gap-3 ${msg.color}  shadow-xl relative overflow-hidden group`}>
+                                    <div className="absolute -right-10 -bottom-10 opacity-[0.07] group-hover:scale-110 group-hover:rotate-12 transition-all duration-700">
+                                        <i className={`fa-solid ${msg.icon} text-9xl`}></i>
+                                    </div>
+                                    <div className="flex items-center gap-4 relative z-10">
+                                        <div className="bg-white/50 w-14 h-14 rounded-full flex items-center justify-center shadow-sm shrink-0">
+                                            <i className={`fa-solid ${msg.icon} text-2xl`}></i>
+                                        </div>
+                                        <h3 className="text-xl font-black uppercase tracking-wide leading-tight">{msg.title}</h3>
+                                    </div>
+                                    <p className="text-base font-semibold opacity-90 relative z-10 leading-relaxed mt-2">{msg.text}</p>
+                                </div>
+                            )}
+                        </div>
+                        
+                        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8 text-left">
+                            <div className="relative glass-panel overflow-hidden group hover:scale-[1.02] transition-all duration-300 rounded-[2rem] border-t-4 border-t-emerald-400 p-6 shadow-xl">
+                                <div className="absolute -right-4 -top-4 w-24 h-24 bg-emerald-400/20 rounded-full blur-2xl group-hover:bg-emerald-400/40 transition-all"></div>
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-sm font-black uppercase text-emerald-600 dark:text-emerald-400 tracking-wider">Đúng</h3>
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shadow-sm shrink-0">
+                                        <i className="fa-solid fa-check text-xl"></i>
+                                    </div>
+                                </div>
+                                <p className="text-4xl font-black text-slate-800 dark:text-slate-100 mb-1">{calculateScore()}</p>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hidden md:block">Câu trả lời</p>
+                            </div>
+                            
+                            <div className="relative glass-panel overflow-hidden group hover:scale-[1.02] transition-all duration-300 rounded-[2rem] border-t-4 border-t-rose-400 p-6 shadow-xl">
+                                <div className="absolute -right-4 -top-4 w-24 h-24 bg-rose-400/20 rounded-full blur-2xl group-hover:bg-rose-400/40 transition-all"></div>
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-sm font-black uppercase text-rose-600 dark:text-rose-400 tracking-wider">Sai</h3>
+                                    <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/50 flex items-center justify-center text-rose-600 dark:text-rose-400 shadow-sm shrink-0">
+                                        <i className="fa-solid fa-xmark text-xl"></i>
+                                    </div>
+                                </div>
+                                <p className="text-4xl font-black text-slate-800 dark:text-slate-100 mb-1">{Object.keys(answers).length - calculateScore()}</p>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hidden md:block">Câu sai sót</p>
+                            </div>
+                            
+                            <div className="relative glass-panel overflow-hidden group hover:scale-[1.02] transition-all duration-300 rounded-[2rem] border-t-4 border-t-slate-400 p-6 shadow-xl">
+                                <div className="absolute -right-4 -top-4 w-24 h-24 bg-slate-400/20 rounded-full blur-2xl group-hover:bg-slate-400/40 transition-all"></div>
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-sm font-black uppercase text-slate-500 dark:text-slate-400 tracking-wider">Chưa làm</h3>
+                                    <div className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-300 shadow-sm shrink-0">
+                                        <i className="fa-solid fa-forward text-lg"></i>
+                                    </div>
+                                </div>
+                                <p className="text-4xl font-black text-slate-800 dark:text-slate-100 mb-1">{questions.length - Object.keys(answers).length}</p>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hidden md:block">Bỏ qua / Hết giờ</p>
+                            </div>
+                            
+                            <div className="relative glass-panel overflow-hidden group hover:scale-[1.02] transition-all duration-300 rounded-[2rem] border-t-4 border-t-amber-400 p-6 shadow-xl">
+                                <div className="absolute -right-4 -top-4 w-24 h-24 bg-amber-400/20 rounded-full blur-2xl group-hover:bg-amber-400/40 transition-all"></div>
+                                <div className="flex items-center justify-between mb-4">
+                                    <h3 className="text-sm font-black uppercase text-amber-600 dark:text-amber-400 tracking-wider">Lưu ý</h3>
+                                    <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-amber-600 dark:text-amber-400 shadow-sm shrink-0">
+                                        <i className="fa-solid fa-flag text-lg"></i>
+                                    </div>
+                                </div>
+                                <p className="text-4xl font-black text-slate-800 dark:text-slate-100 mb-1">{flagged.size}</p>
+                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest hidden md:block">Câu có cờ</p>
+                            </div>
+                        </div>
+
+                        <div className="mb-8 p-6 bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-slate-700/50 flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div className="flex items-center gap-4 text-left">
+                                <div className="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-900/40 text-indigo-500 flex justify-center items-center shrink-0">
+                                    <i className="fa-solid fa-stopwatch text-2xl"></i>
+                                </div>
+                                <div>
+                                    <p className="text-slate-500 font-bold uppercase text-xs tracking-widest">Thời gian trung bình</p>
+                                    <p className="text-xl md:text-2xl font-black text-slate-800 dark:text-slate-100">
+                                        {Object.keys(answers).length > 0 ? ((questions.length * 60 - timeRemaining) / Object.keys(answers).length).toFixed(1) : 0} giây <span className="text-sm font-semibold opacity-70">/ câu</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="px-5 py-2.5 rounded-full bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-400 font-bold text-sm shrink-0">
+                                <i className="fa-solid fa-bolt mr-2"></i> Quyết định thần tốc!
+                            </div>
+                        </div>
+
+                        <div className="mt-8 mb-10 p-5 bg-blue-50/50 dark:bg-blue-900/10 rounded-2xl border border-blue-100 dark:border-blue-800/30 flex items-center gap-4 text-left shadow-sm">
+                            <div className="w-12 h-12 bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center shadow-sm shrink-0">
+                                <i className="fa-solid fa-file-pdf text-rose-500 text-xl"></i>
+                            </div>
+                            <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 leading-snug">Bạn có thể tra cứu giải thích đáp án chi tiết trong file PDF do <strong>TEAMDRCAT</strong> biên soạn.</span>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-5">
+                            <button onClick={restartQuiz} className="flex-1 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border-2 border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 text-lg font-bold py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-sm  uppercase tracking-widest ">
+                                <i className="fa-solid fa-rotate-right text-xl"></i> Làm lại bài
+                            </button>
+                            <button onClick={() => { setAppState('review'); setCurrentIndex(0); }} className="flex-1 btn-gradient text-white text-lg font-black py-5 rounded-2xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_10px_20px_-10px_rgba(59,130,246,0.6)] hover:shadow-[0_15px_30px_-10px_rgba(59,130,246,0.8)] uppercase tracking-widest  border border-white/20 relative overflow-hidden group">
+                                <i className="fa-solid fa-eye text-2xl relative z-10 shrink-0"></i> 
+                                <span className="relative z-10">Xem đáp án chi tiết</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        if (appState === 'review') {
+            return (
+                <div className="space-y-6 animate-in fade-in duration-300 relative z-10">
+                    <div className="glass-panel p-5 rounded-2xl border-l-4 border-l-orange-500 flex items-center justify-between shadow-lg sticky top-0 z-20">
+                        <h2 className="text-lg font-black text-orange-600 dark:text-orange-400 uppercase tracking-tight flex items-center gap-2"><i className="fa-solid fa-list-check text-xl"></i> Review Đáp Án</h2>
+                    </div>
+                    
+                    {questions.length > 0 && questions.map((q, index) => {
+                        const isSelected = !!answers[index];
+                        const isCorrect = answers[index] === q.answer;
+                        const isFlagged = flagged.has(index);
+                        const showContext = q.context && (index === 0 || q.context !== questions[index - 1].context);
+                        
+                        let qStatus = <span className="text-slate-500 dark:text-slate-400 font-bold text-sm bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-lg"><i className="fa-solid fa-minus mr-1"></i>Chưa làm</span>;
+                        let qTagClass = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest text-white shadow-sm bg-slate-400 dark:bg-slate-600";
+                        let qBoxClass = "fast-render-box glass-panel rounded-[1.5rem] shadow-lg p-6 md:p-8 relative overflow-hidden";
+
+                        if (isSelected) {
+                            if (isCorrect) {
+                                qStatus = <span className="text-green-700 dark:text-green-300 font-bold text-sm bg-green-100 dark:bg-green-900/50 px-3 py-1 rounded-lg border border-green-200 dark:border-green-800"><i className="fa-solid fa-check mr-1"></i>Chính xác</span>;
+                                qTagClass = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest text-white shadow-sm bg-green-500 dark:bg-green-600";
+                                qBoxClass = "glass-panel rounded-[1.5rem] shadow-lg border-l-4 border-l-green-500 p-6 md:p-8 relative overflow-hidden";
+                            } else {
+                                qStatus = <span className="text-red-700 dark:text-red-300 font-bold text-sm bg-red-100 dark:bg-red-900/50 px-3 py-1 rounded-lg border border-red-200 dark:border-red-800"><i className="fa-solid fa-xmark mr-1"></i>Sai</span>;
+                                qTagClass = "px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-widest text-white shadow-sm bg-red-500 dark:bg-red-600";
+                                qBoxClass = "glass-panel rounded-[1.5rem] shadow-lg border-l-4 border-l-red-500 p-6 md:p-8 relative overflow-hidden";
+                            }
+                        }
+                        
+                        return (
+                            <div key={index} id={`review-q-${index}`} className={qBoxClass}>
+                                {showContext && (
+                                    <div className="medical-record-box rounded-xl p-5 mb-8 shadow-sm text-left">
+                                        <div className="flex items-center gap-2 mb-3 border-b border-blue-200 dark:border-blue-800 pb-2">
+                                            <i className="fa-solid fa-notes-medical text-blue-600 dark:text-blue-400 text-lg"></i>
+                                            <span className="font-black text-blue-800 dark:text-blue-300 uppercase text-sm tracking-wide">TÌNH HUỐNG LÂM SÀNG</span>
+                                        </div>
+                                        <p className="text-slate-800 dark:text-slate-200 text-lg md:text-xl font-bold leading-relaxed whitespace-pre-wrap">{q.context}</p>
+                                    </div>
+                                )}
+                                <div className="flex justify-between items-center mb-6">
+                                    <div className="flex items-center gap-3">
+                                        <span className={qTagClass}>Câu {q.id}</span>
+                                        {isFlagged && <span className="text-orange-600 dark:text-orange-400 font-bold text-sm bg-orange-100 dark:bg-orange-900/50 px-3 py-1 rounded-lg border border-orange-200 dark:border-orange-800"><i className="fa-solid fa-flag mr-1"></i>Đã cờ</span>}
+                                        {qStatus}
+                                    </div>
+                                </div>
+                                <h3 className="text-lg md:text-xl font-bold text-slate-800 dark:text-slate-100 leading-relaxed mb-6 whitespace-pre-wrap">{q.question}</h3>
+                                <div className="grid gap-3 mb-2">
+                                    {['A', 'B', 'C', 'D', 'E'].map(key => {
+                                        const label = q.options[key];
+                                        if (!label) return null;
+                                        
+                                        const isUserChoice = answers[index] === key;
+                                        const isCorrectOption = q.answer === key;
+                                        
+                                        let btnClass = "w-full p-4 rounded-xl border border-slate-200/60 dark:border-slate-600/60 text-left flex items-center gap-4 relative bg-white/40 dark:bg-slate-700/40 text-slate-600 dark:text-slate-300 opacity-80";
+                                        let spanClass = "w-8 h-8 rounded-lg flex items-center justify-center font-bold text-base shrink-0 bg-white dark:bg-slate-800 text-slate-500 dark:text-slate-400 shadow-sm border border-slate-200 dark:border-slate-600";
+                                        
+                                        if (isCorrectOption) {
+                                            btnClass = "w-full p-4 rounded-xl border-2 text-left flex items-center gap-4 relative bg-blue-50/80 dark:bg-blue-900/30 border-rose-500 dark:border-blue-600 text-blue-800 dark:text-blue-200 shadow-md ring-1 ring-blue-500 opacity-100 grayscale-0";
+                                            spanClass = "w-8 h-8 rounded-lg flex items-center justify-center font-bold text-base shrink-0 bg-rose-500 dark:bg-blue-600 text-white shadow-sm border-none";
+                                        } else if (isUserChoice) {
+                                            btnClass = "w-full p-4 rounded-xl border-2 text-left flex items-center gap-4 relative bg-red-50/80 dark:bg-red-900/30 border-red-400 dark:border-red-600 text-red-800 dark:text-red-200 shadow-md opacity-100 grayscale-0";
+                                            spanClass = "w-8 h-8 rounded-lg flex items-center justify-center font-bold text-base shrink-0 bg-red-500 dark:bg-red-600 text-white shadow-sm border-none";
+                                        }
+                                        
+                                        return (
+                                            <div key={key} className={btnClass}>
+                                                <span className={spanClass}>{key}</span>
+                                                <span className="text-base font-medium leading-relaxed flex-1 pr-8 whitespace-pre-wrap">{label}</span>
+                                                {isCorrectOption && <i className="fa-solid fa-circle-check text-2xl text-rose-500 dark:text-blue-400 absolute right-4 top-1/2 -translate-y-1/2 drop-shadow-sm"></i>}
+                                                {isUserChoice && !isCorrectOption && <i className="fa-solid fa-circle-xmark text-2xl text-red-500 dark:text-red-400 absolute right-4 top-1/2 -translate-y-1/2 drop-shadow-sm"></i>}
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            );
+        }
+
+        const currentQ = questions[currentIndex];
+        const hasAnsweredCurrent = !!answers[currentIndex];
+        
+        return (
+            <div className="space-y-4 relative z-10">
+                {questions.length > 0 && currentQ && (
+                    <div className="glass-panel rounded-[2rem] shadow-2xl p-6 md:p-8 md:px-10 relative overflow-hidden border-t-4 border-t-blue-500/80">
+                        {currentQ.context && (
+                            <div className="medical-record-box rounded-2xl p-5 md:p-6 mb-8 shadow-sm text-left animate-in fade-in slide-in-from-top-4 duration-500">
+                                <div className="flex items-center gap-3 mb-3 border-b border-blue-200 dark:border-blue-800 pb-3">
+                                    <div className="bg-blue-100 dark:bg-blue-900 p-2 rounded-lg">
+                                        <i className="fa-solid fa-file-waveform text-blue-600 dark:text-blue-400 text-lg"></i>
+                                    </div>
+                                    <span className="font-black text-blue-800 dark:text-blue-300 uppercase text-sm tracking-wider">TÌNH HUỐNG LÂM SÀNG (Dùng cho câu {currentQ.id})</span>
+                                </div>
+                                <p className="text-slate-800 dark:text-slate-200 text-lg md:text-xl font-bold leading-relaxed whitespace-pre-wrap">{currentQ.context}</p>
+                            </div>
+                        )}
+                                                <div className="mb-8">
+                            <div className="flex justify-between items-center mb-3">
+                                <div className="flex items-center gap-2">
+                                    <span className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-5 py-2 rounded-xl text-sm font-black uppercase tracking-widest shadow-md">Câu {currentQ.id}</span>
+                                    <span className="text-slate-500 dark:text-slate-400 font-bold text-xs tracking-widest uppercase ml-1">/ {questions.length}</span>
+                                </div>
+                                <button onClick={toggleFlag} className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold border transition-all duration-300 shadow-sm hover:-translate-y-0.5 ${flagged.has(currentIndex) ? 'bg-orange-100 dark:bg-orange-900/60 border-orange-400 text-orange-600 dark:text-orange-400' : 'bg-white/80 dark:bg-slate-800/80 border-slate-200/80 dark:border-slate-600/80 text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 hover:border-slate-300 dark:hover:border-slate-500'}`}>
+                                    <i className={`fa-solid fa-flag text-sm ${flagged.has(currentIndex) ? 'animate-pulse' : ''}`}></i>
+                                    <span>Đánh dấu cờ</span>
+                                </button>
+                            </div>
+                            
+                            <div className="flex items-center gap-3 w-full group" title="Tiến độ làm bài">
+                                <i className="fa-solid fa-syringe text-blue-600 dark:text-blue-400 text-xl transform -rotate-45"></i>
+                                <div className="flex-1 h-4 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden border border-slate-300 dark:border-slate-600 shadow-inner relative">
+                                    <div className="h-full bg-gradient-to-r from-emerald-400 to-blue-500 transition-all duration-500 relative" style={{ width: `${(Object.keys(answers).length / questions.length) * 100}%` }}>
+                                        <div className="absolute inset-0 bg-white/10" style={{ backgroundImage: 'linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent)', backgroundSize: '1rem 1rem' }}></div>
+                                    </div>
+                                    <div className="absolute top-0 right-0 h-full w-2 bg-slate-300 dark:bg-slate-600"></div>
+                                </div>
+                                <span className="text-xs font-black text-blue-700 dark:text-blue-300">{Math.round((Object.keys(answers).length / questions.length) * 100)}%</span>
+                            </div>
+                        </div>
+                        <h3 className="text-lg md:text-xl font-bold text-slate-800 dark:text-slate-100 leading-relaxed mb-8 whitespace-pre-wrap drop-shadow-sm">{currentQ.question}</h3>
+                        <div className="grid gap-4">
+                            {['A', 'B', 'C', 'D', 'E'].map(key => {
+                                const label = currentQ.options[key];
+                                if (!label) return null;
+                                
+                                const isSelected = answers[currentIndex] === key;
+                                const isCorrect = currentQ.answer === key;
+                                const showAnswerState = hasAnsweredCurrent;
+                                
+                                let btnClass = "group w-full p-4 md:p-5 rounded-2xl border border-white/60 dark:border-slate-600/50 text-left flex items-center gap-4 option-transition relative bg-white/70 dark:bg-slate-800/70 hover:border-blue-400 dark:hover:border-rose-500 hover:bg-white dark:hover:bg-slate-800 shadow-sm hover:shadow-sm transform  active:scale-[0.98]";
+                                let spanClass = "w-10 h-10 rounded-xl flex items-center justify-center font-black text-base shrink-0 transition-all duration-300 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 shadow-sm group-hover:bg-rose-500 dark:group-hover:bg-blue-600 group-hover:text-white border border-slate-200 dark:border-slate-600 group-hover:border-transparent";
+                                
+                                if (showAnswerState) {
+                                    if (isCorrect) {
+                                        btnClass = "group w-full p-4 md:p-5 rounded-2xl border-2 text-left flex items-center gap-4 option-transition relative bg-green-50/95 dark:bg-green-900/40 border-green-500 dark:border-green-500 text-green-900 dark:text-green-100 shadow-md ring-4 ring-green-500/20 transform scale-[1.02] z-10";
+                                        spanClass = "w-10 h-10 rounded-xl flex items-center justify-center font-black text-base shrink-0 transition-all bg-green-500 dark:bg-green-500 text-white shadow-sm border-none";
+                                    } else if (isSelected) {
+                                        btnClass = "group w-full p-4 md:p-5 rounded-2xl border-2 text-left flex items-center gap-4 option-transition relative bg-red-50/95 dark:bg-red-900/40 border-red-400 dark:border-red-500 text-red-900 dark:text-red-100 shadow-md ring-4 ring-red-500/20";
+                                        spanClass = "w-10 h-10 rounded-xl flex items-center justify-center font-black text-base shrink-0 transition-all bg-red-500 dark:bg-red-500 text-white shadow-sm border-none";
+                                    } else {
+                                        btnClass = "group w-full p-4 md:p-5 rounded-2xl border text-left flex items-center gap-4 option-transition relative border-slate-200/50 dark:border-slate-700/50 bg-white/30 dark:bg-slate-800/40 text-slate-600 dark:text-slate-400 opacity-70";
+                                        spanClass = "w-10 h-10 rounded-xl flex items-center justify-center font-black text-base shrink-0 transition-all bg-slate-100/50 dark:bg-slate-700/60 text-slate-500 dark:text-slate-400 shadow-none border border-slate-200/50 dark:border-slate-600/50";
+                                    }
+                                }
+                                
+                                return (
+                                    <button key={key} onClick={() => handleSelectAnswer(key)} disabled={showAnswerState} className={btnClass}>
+                                        <span className={spanClass}>{key}</span>
+                                        <span className="text-base font-semibold leading-relaxed flex-1 pr-8 whitespace-pre-wrap dark:text-slate-200">{label}</span>
+                                        {showAnswerState && isCorrect && <i className="fa-solid fa-circle-check text-3xl text-rose-500 dark:text-blue-400 absolute right-5 top-1/2 -translate-y-1/2 drop-shadow-md will-change-transform"></i>}
+                                        {showAnswerState && isSelected && !isCorrect && <i className="fa-solid fa-circle-xmark text-3xl text-red-500 dark:text-red-400 absolute right-5 top-1/2 -translate-y-1/2 drop-shadow-md will-change-transform"></i>}
+                                    </button>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
+
+                {questions.length > 0 && (
+                    <React.Fragment>
+                    <div className="flex items-center justify-between gap-4 pt-6 pb-4 relative z-10">
+                        <button onClick={() => setCurrentIndex(p => Math.max(0, p - 1))} disabled={currentIndex === 0} className="flex-1 glass-panel px-6 py-4 rounded-2xl font-bold text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:border-rose-300 dark:hover:border-blue-600 disabled:opacity-0 transition-all duration-300 flex items-center justify-center gap-2 uppercase tracking-wide text-sm shadow-sm  ">
+                            <i className="fa-solid fa-arrow-left text-base"></i> 
+                            <span className="hidden sm:inline">Câu trước</span>
+                        </button>
+                        <button onClick={() => setCurrentIndex(p => Math.min(questions.length - 1, p + 1))} disabled={currentIndex === questions.length - 1} className="flex-1 btn-gradient text-white px-6 py-4 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-blue-500/40 flex items-center justify-center gap-2 uppercase tracking-wide text-sm ">
+                            <span className="hidden sm:inline">Câu tiếp</span> 
+                            <i className="fa-solid fa-arrow-right text-base"></i>
+                        </button>
+                    </div>
+                    {/* NỘP BÀI BUTTON ADDED */}
+                    <div className="mt-2 pb-16 flex justify-center w-full animate-in fade-in slide-in-from-bottom-5 duration-700">
+                        <button onClick={() => { window.customConfirmDialog('Bạn có chắc chắn muốn nộp bài chứ?', () => { setAppState('result'); setShowMatrix(false); }) }} className="w-full sm:w-2/3 md:w-1/2 bg-gradient-to-r from-red-500 to-rose-600 hover:from-red-600 hover:to-rose-700 text-white font-black py-4 px-8 rounded-[1.5rem] shadow-[0_10px_25px_-5px_rgba(239,68,68,0.5)] hover:shadow-[0_15px_30px_-5px_rgba(239,68,68,0.6)] transform  transition-all flex items-center justify-center gap-4 text-lg border border-red-400">
+                            <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center  shadow-inner shrink-0">
+                                <i className="fa-solid fa-paper-plane text-xl"></i>
+                            </div>
+                            <span className="uppercase tracking-[0.2em] drop-shadow-sm">Nộp Bài Ngay</span>
+                        </button>
+                    </div>
+                    </React.Fragment>
+                )}
+            </div>
+        );
+    };
+
+    const handleUnlock = () => {
+        if(passwordInput === 'topcaodrcat2026') {
+            const unlockKey = 'teamdrcat_unlocked_' + document.title;
+            localStorage.setItem(unlockKey, 'true');
+            setAppState('intro');
+        } else {
+            setPwError(true);
+        }
+    };
+
+    if (appState === 'locked') {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-transparent z-40 text-center animate-in fade-in duration-500">
+                <div className={`max-w-md w-full glass-panel rounded-[2.5rem] shadow-2xl p-10 flex flex-col items-center transform transition-all duration-300 ${pwError ? 'animate-shake' : ''}`}>
+                    <div className="w-20 h-20 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-inner mb-6 relative group">
+                        <div className="absolute inset-0 bg-blue-400 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
+                        <i className="fa-solid fa-lock text-3xl"></i>
+                    </div>
+                    <h2 className="text-2xl font-black uppercase text-slate-800 dark:text-slate-100 mb-2 tracking-tighter">Bảo mật truy cập</h2>
+                    <p className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-8 border-b border-slate-200 dark:border-slate-700/50 pb-6 w-full">Vui lòng nhập mật khẩu tài liệu.</p>
+                    
+                    <div className="relative mb-6">
+                        <input 
+                            type={showPassword ? "text" : "password"} 
+                            value={passwordInput}
+                            onChange={(e) => { setPasswordInput(e.target.value); setPwError(false); }}
+                            onKeyDown={(e) => { if(e.key === 'Enter') handleUnlock(); }}
+                            className={`w-full px-5 py-4 rounded-xl font-bold bg-white/70 dark:bg-slate-800/70 border-2 outline-none transition-all shadow-sm text-center tracking-[0.3em] text-lg ${pwError ? 'border-red-400 text-red-500 bg-red-50' : 'border-slate-200 dark:border-slate-700 focus:border-rose-500 text-slate-800 dark:text-slate-100'}`}
+                            placeholder="••••••••••"
+                        />
+                        <button 
+                            type="button"
+                            onClick={() => setShowPassword(!showPassword)}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-rose-500 transition-colors w-10 h-10 flex items-center justify-center rounded-full hover:bg-blue-50 dark:hover:bg-slate-700"
+                        >
+                            <i className={`fa-solid ${showPassword ? 'fa-eye-slash' : 'fa-eye'} text-xl`}></i>
+                        </button>
+                    </div>
+                    
+                    {pwError && <p className="text-red-500 text-xs font-bold uppercase mb-4 tracking-widest flex items-center justify-center gap-2 animate-in slide-in-from-top-1"><i className="fa-solid fa-triangle-exclamation"></i> Mật khẩu chưa đúng</p>}
+                    
+                    <button onClick={handleUnlock} className="w-full btn-gradient text-white text-lg font-black py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg  transition-all border border-white/20">
+                        <i className="fa-solid fa-key"></i> Xác nhận
+                    </button>
+                    <p className="mt-8 text-[10px] font-black text-slate-400 uppercase tracking-widest opacity-80">Tài liệu nội bộ TEAMDRCAT</p>
+                </div>
+            </div>
+        );
+    }
+
+    if (appState === 'unlocking') {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-transparent z-40 text-center">
+                <div key={unlockCountdown} className="animate-heartbeat flex flex-col items-center justify-center" style={{ animationDuration: '1s' }}>
+                    <div className="text-[180px] md:text-[220px] font-black leading-none bg-clip-text text-transparent bg-gradient-to-b from-blue-400 to-cyan-500 drop-shadow-[0_0_40px_rgba(37,99,235,0.8)] filter">
+                        {unlockCountdown}
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    if (appState === 'intro') {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden bg-transparent">
+                
+                <div className="absolute top-4 right-4 z-50 flex gap-3">
+                    <button onClick={() => setIsSoundEnabled(!isSoundEnabled)} className="p-3 glass-panel shadow-lg rounded-full hover:bg-white/90 dark:hover:bg-slate-700/90 transition-all duration-300 text-slate-600 dark:text-slate-300 hover:scale-110">
+                        {isSoundEnabled ? <i className="fa-solid fa-volume-high text-xl text-rose-500"></i> : <i className="fa-solid fa-volume-xmark text-xl text-slate-400"></i>}
+                    </button>
+                    <button onClick={() => setZoomLevel(prev => Math.min(prev + 10, 150))} title="Phóng to" className="p-3 glass-panel shadow-lg rounded-full hover:bg-white/90 dark:hover:bg-slate-700/90 transition-all duration-300 text-slate-600 dark:text-slate-300 hover:scale-110">
+                          <i className="fa-solid fa-magnifying-glass-plus text-xl text-emerald-500"></i>
+                      </button>
+                      <button onClick={() => setZoomLevel(prev => Math.max(prev - 10, 50))} title="Thu nhỏ" className="p-3 glass-panel shadow-lg rounded-full hover:bg-white/90 dark:hover:bg-slate-700/90 transition-all duration-300 text-slate-600 dark:text-slate-300 hover:scale-110">
+                          <i className="fa-solid fa-magnifying-glass-minus text-xl text-emerald-500"></i>
+                      </button>
+                      <button onClick={() => setIsDarkMode(!isDarkMode)} className="p-3 glass-panel shadow-lg rounded-full hover:bg-white/90 dark:hover:bg-slate-700/90 transition-all duration-300 text-slate-600 dark:text-slate-300 hover:scale-110">
+                        {isDarkMode ? <i className="fa-solid fa-sun text-xl text-amber-500"></i> : <i className="fa-solid fa-moon text-xl text-rose-500"></i>}
+                    </button>
+                </div>
+                <div className="max-w-2xl w-full glass-panel rounded-[2.5rem] shadow-2xl overflow-hidden relative z-10 border-t border-l border-white/80 dark:border-slate-700/50 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <div className="p-12 pb-8 flex flex-col items-center text-center relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-500/10 to-cyan-600/10 dark:from-blue-900/20 dark:to-cyan-900/20 pointer-events-none"></div>
+                        <div className="w-24 h-24 bg-white dark:bg-slate-800 rounded-full mb-6 shadow-xl border border-blue-100 dark:border-slate-700 flex items-center justify-center relative group">
+                            <div className="absolute inset-0 bg-blue-400 rounded-full opacity-20 group-hover:scale-150 transition-transform duration-700"></div>
+                            <i className="fa-solid fa-staff-snake text-5xl bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-cyan-600 drop-shadow-sm text-rose-500"></i>
+                        </div>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black uppercase tracking-tighter mb-3 z-10 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400 drop-shadow-sm">TRẮC NGHIỆM DƯỢC LÝ</h1>
+                        <p className="text-blue-700 dark:text-blue-300 text-lg font-bold tracking-widest uppercase z-10 opacity-80">CHUYÊN ĐỀ: {diseaseName}</p>
+                    </div>
+                    <div className="p-10 pt-2 bg-white/40 dark:bg-slate-900/85 ">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                            <div className="flex items-center gap-4 bg-white/70 dark:bg-slate-800/70 p-5 rounded-2xl border border-white/50 dark:border-slate-700/50 shadow-sm transition-transform duration-300  ">
+                                <div className="bg-blue-100 dark:bg-blue-900/50 w-12 h-12 flex items-center justify-center rounded-xl text-blue-600 dark:text-blue-400 shadow-inner"><i className="fa-solid fa-layer-group text-xl"></i></div>
+                                <div><p className="text-[10px] text-slate-500 dark:text-slate-400 font-black uppercase tracking-widest mb-1">Tổng câu hỏi</p><p className="text-2xl font-black text-slate-800 dark:text-slate-100 leading-none">{questions.length}</p></div>
+                            </div>
+                            <div className="flex items-center gap-4 bg-white/70 dark:bg-slate-800/70 p-5 rounded-2xl border border-white/50 dark:border-slate-700/50 shadow-sm transition-transform duration-300  ">
+                                <div className="bg-cyan-100 dark:bg-cyan-900/50 w-12 h-12 flex items-center justify-center rounded-xl text-cyan-600 dark:text-cyan-400 shadow-inner"><i className="fa-regular fa-hourglass-half text-xl"></i></div>
+                                <div><p className="text-[10px] text-slate-500 dark:text-slate-400 font-black uppercase tracking-widest mb-1">Thời gian</p><p className="text-2xl font-black text-slate-800 dark:text-slate-100 leading-none">{questions.length} Phút</p></div>
+                            </div>
+                        </div>
+                        <div className="bg-blue-50/80 dark:bg-blue-900/20 rounded-2xl p-6 mb-10 border border-blue-100 dark:border-blue-800/30 flex items-start gap-4 text-blue-900 dark:text-blue-100 shadow-inner">
+                            <i className="fa-solid fa-circle-info shrink-0 mt-0.5 text-2xl text-cyan-600 dark:text-cyan-400"></i>
+                            <div className="text-base leading-relaxed font-medium">
+                                <p className="font-bold mb-3 text-cyan-800 dark:text-cyan-300 text-lg">Hướng dẫn làm bài:</p>
+                                <ul className="list-disc pl-5 space-y-2 opacity-90 marker:text-cyan-600 dark:marker:text-cyan-400">
+                                    <li>Kết quả đúng/sai sẽ hiển thị <strong className="text-cyan-900 dark:text-cyan-200 font-bold">ngay lập tức</strong> khi chọn.</li>
+                                    <li>Khi đã chọn, bạn <strong className="text-cyan-900 dark:text-cyan-200 font-bold">không thể thay đổi</strong> đáp án của câu đó.</li>
+                                    <li>Sử dụng nút <strong className="text-cyan-900 dark:text-cyan-200 font-bold">Đánh dấu cờ</strong> để lưu lại những câu khó.</li>
+                                    <li><i className="fa-solid fa-keyboard mr-1 opacity-70"></i> Phím tắt điểu khiển: Ghép <strong className="text-cyan-900 dark:text-cyan-200 font-bold">A, B, C, D</strong> để chọn; <strong className="text-cyan-900 dark:text-cyan-200 font-bold">Mũi tên</strong> để chuyển câu; <strong className="text-cyan-900 dark:text-cyan-200 font-bold">Phím Space</strong> để cắm cờ.</li>
+                                    <li>Được biên soạn bởi <strong className="text-cyan-900 dark:text-cyan-200 font-bold">TEAMDRCAT</strong>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button onClick={startQuiz} className="w-full btn-gradient text-white text-xl font-black py-5 rounded-2xl transition-all duration-300 shadow-[0_10px_20px_-10px_rgba(37,99,235,0.6)] hover:shadow-[0_15px_25px_-10px_rgba(37,99,235,0.8)] flex items-center justify-center gap-3 uppercase tracking-widest  active:scale-95 border border-white/20">
+                            <i className="fa-solid fa-rocket text-xl"></i> Bắt đầu ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="min-h-screen flex flex-col md:flex-row relative transition-colors duration-1000 z-0">
+            {showDrNote && (
+                <div className="fixed z-[100] w-72 glass-panel shadow-2xl rounded-2xl overflow-hidden border border-rose-500/50" style={{ right: '2rem', bottom: '2rem', animation: 'slideIn 0.3s ease-out' }} ref={(el) => { if(el && !el.dataset.dragInit) { el.dataset.dragInit = 'true'; el.style.transform = window._drNoteTransform || ''; } }}>
+                    <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-4 py-3 flex justify-between items-center text-white cursor-move" style={{ touchAction: 'none' }} onPointerDown={(e) => { if(e.target.closest('button')) return; const el = e.currentTarget; const panel = el.parentElement; el.setPointerCapture(e.pointerId); const startX = e.clientX; const startY = e.clientY; const transformStr = panel.style.transform; let initialDx = 0, initialDy = 0; if(transformStr && transformStr.includes('translate(')) { const match = transformStr.match(/translate\(([-\d.]+)px,\s*([-\d.]+)px\)/); if(match) { initialDx = parseFloat(match[1]); initialDy = parseFloat(match[2]); } } const onMove = (moveEvent) => { const dx = initialDx + (moveEvent.clientX - startX); const dy = initialDy + (moveEvent.clientY - startY); const newTransform = `translate(${dx}px, ${dy}px)`; panel.style.transform = newTransform; window._drNoteTransform = newTransform; }; const onUp = () => { el.removeEventListener('pointermove', onMove); el.removeEventListener('pointerup', onUp); el.releasePointerCapture(e.pointerId); }; el.addEventListener('pointermove', onMove); el.addEventListener('pointerup', onUp); }}>
+                        <span className="font-bold flex items-center gap-2"><i className="fa-solid fa-user-doctor"></i> Sổ tay Y lệnh</span>
+                        <button onClick={() => setShowDrNote(false)} className="hover:text-red-200 transition-colors"><i className="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div className="p-0">
+                        <textarea 
+                            value={drNoteContent}
+                            onChange={(e) => setDrNoteContent(e.target.value)}
+                            placeholder="Ghi chú các thông số bất thường, chẩn đoán sơ bộ..."
+                            className="w-full h-48 p-4 bg-yellow-50/90 dark:bg-yellow-900/20 text-slate-800 dark:text-slate-200 resize-none outline-none font-mono text-sm border-none focus:ring-0 custom-scrollbar"
+                            style={{ backgroundImage: 'linear-gradient(transparent, transparent 27px, #cbd5e1 28px)', backgroundSize: '100% 28px', lineHeight: '28px' }}
+                        ></textarea>
+                    </div>
+                </div>
+            )}
+            
+            {showMatrix && <div className="fixed inset-0 bg-slate-900/95  z-40 md:hidden transition-opacity" onClick={() => setShowMatrix(false)}></div>}
+            
+            <aside className={`fixed md:sticky top-0 right-0 h-screen w-[85vw] max-w-[320px] md:max-w-none md:w-[400px] glass-panel z-50 flex flex-col transition-transform duration-500 ease-in-out ${showMatrix ? 'translate-x-0' : 'translate-x-full md:translate-x-0'} md:order-2 shadow-[-10px_0_30px_rgba(0,0,0,0.05)] dark:shadow-none border-l border-white/40 dark:border-slate-700/50`}>
+                <div className="p-6 border-b border-slate-200/50 dark:border-slate-700/50 flex justify-between items-center bg-white/40 dark:bg-slate-800/90  sticky top-0 z-10">
+                    <h2 className="font-black text-slate-800 dark:text-slate-100 flex items-center gap-3 uppercase tracking-tighter text-base"><div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400"><i className="fa-solid fa-grip"></i></div> Bảng câu hỏi</h2>
+                    <button className="md:hidden text-slate-500 p-2 bg-white/50 dark:bg-slate-700/50 rounded-full hover:bg-white dark:hover:bg-slate-600 transition-colors shadow-sm" onClick={() => setShowMatrix(false)}><i className="fa-solid fa-xmark text-lg"></i></button>
+                </div>
+                <div className="flex-1 overflow-y-auto p-6 custom-scrollbar grid grid-cols-5 gap-3 content-start">
+                    {questions.map((q, i) => {
+                        let navBtnClass = "h-12 w-full rounded-xl text-sm font-black border relative flex items-center justify-center active:scale-95 transition-transform duration-75 bg-white/60 dark:bg-slate-700/60 text-slate-500 border-white/50 dark:border-slate-600/50 dark:text-slate-300 shadow-sm  ";
+                        if (!!answers[i]) {
+                            if (answers[i] === q.answer) {
+                                navBtnClass = "h-12 w-full rounded-xl text-sm font-black border-2 relative flex items-center justify-center active:scale-95 transition-transform duration-75 bg-green-100/90 dark:bg-green-900/60 text-green-700 dark:text-green-300 border-green-400/50 dark:border-green-600/50 shadow-sm ";
+                            } else {
+                                navBtnClass = "h-12 w-full rounded-xl text-sm font-black border-2 relative flex items-center justify-center active:scale-95 transition-transform duration-75 bg-red-100/90 dark:bg-red-900/60 text-red-700 dark:text-red-300 border-red-400/50 dark:border-red-600/50 shadow-sm ";
+                            }
+                        }
+                        if (currentIndex === i && appState !== 'review') {
+                            navBtnClass += " border-blue-500 bg-blue-100 will-change-transform scale-105 z-10";
+                        }
+                        if (flagged.has(i)) {
+                            navBtnClass += " !border-orange-400 dark:!border-orange-500 !bg-orange-100/90 dark:!bg-orange-900/50 text-orange-700 dark:text-orange-400";
+                        }
+                        return (
+                            <button 
+                                key={i} 
+                                onClick={() => { 
+                                    if (appState === 'review') { 
+                                        const target = document.getElementById(`review-q-${i}`); 
+                                        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' }); 
+                                    } else { 
+                                        setCurrentIndex(i); 
+                                    } 
+                                    if (window.innerWidth < 768) setShowMatrix(false); 
+                                }} 
+                                className={navBtnClass}
+                            >
+                                {i + 1}
+                                {flagged.has(i) && <div className="absolute -top-2 -right-2 w-5 h-5 bg-gradient-to-br from-orange-400 to-red-500 rounded-full border border-white dark:border-slate-800 shadow-md flex items-center justify-center text-white text-[10px]"><i className="fa-solid fa-flag"></i></div>}
+                            </button>
+                        );
+                    })}
+                </div>
+                <div className="p-6 pb-28 border-t border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/90  z-10">
+                    {appState === 'quiz' ? (
+                        <button onClick={() => { window.customConfirmDialog('Bạn có chắc chắn muốn nộp bài chứ?', () => { setAppState('result'); setShowMatrix(false); }) }} className="w-full btn-gradient text-white font-black py-4 rounded-xl shadow-lg flex items-center justify-center gap-2 uppercase tracking-widest hover:shadow-blue-500/40 transition-all "><i className="fa-solid fa-paper-plane text-lg"></i> Nộp bài ngay</button>
+                    ) : (
+                        <button onClick={restartQuiz} className="w-full bg-slate-800 dark:bg-slate-700 text-white font-black py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-slate-900 dark:hover:bg-slate-600 transition-colors shadow-md "><i className="fa-solid fa-rotate-right text-lg"></i> Làm lại từ đầu</button>
+                    )}
+                </div>
+            </aside>
+
+            <main className="flex-1 flex flex-col h-screen md:order-1 overflow-hidden relative z-10">
+                <header className="glass-panel border-b border-white/50 dark:border-slate-700/50 px-4 md:px-6 py-3 md:py-4 flex items-start sm:items-center justify-between sticky top-0 z-30 shadow-sm rounded-none">
+                    <div className="flex items-center gap-4 flex-1 min-w-0">
+                        <div className="w-12 h-12 shrink-0 btn-gradient rounded-2xl flex items-center justify-center text-white shadow-lg shadow-blue-200/50 dark:shadow-none"><i className="fa-solid fa-staff-snake text-2xl"></i></div>
+                        <div className="hidden sm:block flex-1 min-w-0"><h1 className="text-sm font-black text-slate-800 dark:text-slate-100 uppercase tracking-tight drop-shadow-sm truncate">{diseaseName}</h1><p className="text-[10px] text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest mt-0.5 truncate">Tài liệu bởi TeamDrCat</p></div>
+                    </div>
+                    <div className="flex flex-wrap items-center justify-end gap-x-2 gap-y-3 sm:gap-4 ml-auto shrink-0" style={{ maxWidth: "calc(100vw - 120px)" }}>
+                        <GoogleSearch />
+                        <RealTimeClock />
+                        <button onClick={() => setIsSoundEnabled(!isSoundEnabled)} className="p-2.5 bg-white/60 dark:bg-slate-700/60 rounded-xl hover:bg-white dark:hover:bg-slate-600 transition-colors text-slate-600 dark:text-slate-300 border border-white/40 dark:border-slate-600/50 shadow-sm">
+                            {isSoundEnabled ? <i className="fa-solid fa-volume-high text-lg text-rose-500"></i> : <i className="fa-solid fa-volume-xmark text-lg text-slate-400"></i>}
+                        </button>
+                        <button onClick={() => setZoomLevel(prev => Math.min(prev + 10, 150))} title="Phóng to" className="p-2.5 bg-white/60 dark:bg-slate-700/60 rounded-xl hover:bg-white dark:hover:bg-slate-600 transition-colors text-slate-600 dark:text-slate-300 border border-white/40 dark:border-slate-600/50 shadow-sm">
+                              <i className="fa-solid fa-magnifying-glass-plus text-lg text-emerald-500"></i>
+                          </button>
+                          <button onClick={() => setZoomLevel(prev => Math.max(prev - 10, 50))} title="Thu nhỏ" className="p-2.5 bg-white/60 dark:bg-slate-700/60 rounded-xl hover:bg-white dark:hover:bg-slate-600 transition-colors text-slate-600 dark:text-slate-300 border border-white/40 dark:border-slate-600/50 shadow-sm">
+                              <i className="fa-solid fa-magnifying-glass-minus text-lg text-emerald-500"></i>
+                          </button>
+                          <button onClick={() => setIsDarkMode(!isDarkMode)} className="p-2.5 bg-white/60 dark:bg-slate-700/60 rounded-xl hover:bg-white dark:hover:bg-slate-600 transition-colors text-slate-600 dark:text-slate-300 border border-white/40 dark:border-slate-600/50 shadow-sm">
+                            {isDarkMode ? <i className="fa-solid fa-sun text-lg text-amber-500"></i> : <i className="fa-solid fa-moon text-lg text-rose-500"></i>}
+                        </button>
+                        {['quiz', 'review', 'result'].includes(appState) && (
+                            <React.Fragment>
+                        <button onClick={() => setShowDrNote(!showDrNote)} className="p-2.5 bg-yellow-100/80 dark:bg-yellow-900/50 rounded-xl hover:bg-yellow-200 dark:hover:bg-yellow-800 transition-colors text-yellow-700 dark:text-yellow-400 border border-yellow-300/50 dark:border-yellow-700/50 shadow-sm" title="Mở sổ tay">
+                            <i className="fa-solid fa-notes-medical text-lg"></i>
+                        </button>
+                            </React.Fragment>
+                        )}
+                        {appState === 'quiz' && (
+                            <React.Fragment>
+                                <div className={`px-4 py-2 rounded-xl font-mono text-lg font-black border flex items-center gap-3 shadow-sm transition-colors ${timeRemaining < 120 ? 'bg-red-50/90 dark:bg-red-900/50 border-red-300 dark:border-red-700 text-red-600 dark:text-red-400 border-2' : 'bg-white/60 dark:bg-slate-700/60 border-white/50 dark:border-slate-600/50 text-blue-700 dark:text-blue-300'}`}>
+                                    <i className={`fa-solid fa-heart-pulse text-xl ${timeRemaining < 120 ? 'animate-heartbeat-fast' : 'animate-heartbeat'}`}></i>
+                                    {formatTime(timeRemaining)}
+                                </div>
+                                <button onClick={togglePause} className="p-2.5 bg-white/60 dark:bg-slate-700/60 rounded-xl hover:bg-white dark:hover:bg-slate-600 transition-colors text-blue-600 dark:text-blue-400 border border-white/40 dark:border-slate-600/50 shadow-sm">
+                                    {isPaused ? <i className="fa-solid fa-play text-lg"></i> : <i className="fa-solid fa-pause text-lg"></i>}
+                                </button>
+                            </React.Fragment>
+                        )}
+                        {appState === 'review' && <div className="px-4 py-2 rounded-xl font-black bg-amber-100/90 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400 flex items-center gap-2 border border-amber-300/50 dark:border-amber-700/50 shadow-sm"><i className="fa-solid fa-eye"></i> <span className="hidden sm:inline uppercase text-xs tracking-wider">Xem lại</span></div>}
+                        <button className="md:hidden bg-white/60 dark:bg-slate-700/60 text-blue-600 dark:text-blue-400 p-2.5 rounded-xl flex items-center justify-center border border-white/40 dark:border-slate-600/50 shadow-sm" onClick={() => setShowMatrix(true)}><i className="fa-solid fa-bars text-lg"></i></button>
+                    </div>
+                </header>
+
+                <div ref={scrollContainerRef} className="flex-1 overflow-y-auto p-4 md:p-8 custom-scrollbar relative z-0">
+                    <div className="max-w-4xl mx-auto w-full pb-8">
+                        {renderQuizContent()}
+                    </div>
+                </div>
+            </main>
+        </div>
+    );
+}
+
+
+class ErrorBoundary extends React.Component {
+    constructor(props) { super(props); this.state = { hasError: false, error: null, info: null }; }
+    static getDerivedStateFromError(error) { return { hasError: true, error }; }
+    componentDidCatch(error, info) { this.setState({ error, info }); console.error("REACT CRASH: ", error, info); }
+    render() {
+        if (this.state.hasError) {
+            return (
+                <div style={{padding: '40px', background: 'white', color: 'red', minHeight: '100vh', zIndex: 99999, position: 'relative'}}>
+                    <h1 style={{fontSize: '24px', fontWeight: 'bold'}}>HỆ THỐNG GẶP LỖI (CRASH)</h1>
+                    <p style={{marginTop: '10px'}}>{this.state.error && this.state.error.toString()}</p>
+                    <pre style={{marginTop: '20px', background: '#ffebee', padding: '15px', borderRadius: '8px', overflow: 'auto', fontSize: '12px'}}>
+                        {this.state.info && this.state.info.componentStack}
+                    </pre>
+                    <button onClick={() => { localStorage.clear(); window.location.reload(); }} style={{marginTop: '20px', background: 'red', color: 'white', padding: '10px 20px', borderRadius: '8px'}}>Khôi phục / Làm lại từ đầu (Xoá bộ nhớ)</button>
+                </div>
+            );
+        }
+        return this.props.children;
+    }
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<ErrorBoundary><App /></ErrorBoundary>);
+
+
+</script>
+
+
+    <!-- PURE HTML FLOATING NAV - LOADS INSTANTLY -->
+    <nav id="floating-nav-pure" class="fixed bottom-3 sm:bottom-5 left-1/2 -translate-x-1/2 bg-[#383f51] text-[#b3b9cc] px-3 sm:px-6 py-2 sm:py-3 rounded-full flex z-[99999] shadow-[0_10px_30px_rgba(0,0,0,0.3)] items-center text-[9px] sm:text-xs font-black tracking-widest uppercase border border-white/5 divide-x divide-slate-600/50 transition-all scale-85 sm:scale-90 origin-bottom hover:shadow-[0_15px_40px_rgba(0,0,0,0.4)]">
+        <button onclick="if(window.self !== window.top){window.parent.postMessage({action:'closeQuiz'},'*');}else if(window.opener){window.close();}else{window.location.href='index.html';}" class="hover:text-white active:scale-95 transition-all flex items-center gap-1.5 sm:gap-2 pr-3 sm:pr-5">
+            <i class="fa-solid fa-house text-sm sm:text-lg md:text-xl"></i> Trang Chủ
+        </button>
+        <button id="btn-luu-pure" onclick="toggleLuuPure(this)" class="active:scale-95 transition-all flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 hover:text-white">
+            <i class="fa-solid fa-heart text-sm sm:text-lg md:text-xl"></i> Lưu
+        </button>
+        <button id="btn-xong-pure" onclick="toggleXongPure(this)" class="active:scale-95 transition-all flex items-center gap-1.5 sm:gap-2 pl-3 sm:pl-5 hover:text-white">
+            <i class="fa-solid fa-circle-check text-sm sm:text-lg md:text-xl"></i> Đã Xong
+        </button>
+    </nav>
+    <script>
+        (function() {
+            try {
+                const u = window.location.pathname.split('/').pop().split('?')[0].split('#')[0];
+                const b = JSON.parse(localStorage.getItem('pwa_bookmarks_duocly') || '[]');
+                if(b.includes(u)) { document.write('<style>#btn-luu-pure { color: #f43f5e; font-weight: 900; filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)); }</style>'); }
+                const c = JSON.parse(localStorage.getItem('pwa_completed_duocly') || '[]');
+                if(c.includes(u)) { document.write('<style>#btn-xong-pure { color: #34d399; font-weight: 900; filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)); }</style>'); }
+            } catch(e) {}
+        })();
+        function toggleLuuPure(btn) {
+            try {
+                const u = window.location.pathname.split('/').pop().split('?')[0].split('#')[0];
+                let b = JSON.parse(localStorage.getItem('pwa_bookmarks_duocly') || '[]');
+                let isGhim = false;
+                if(!b.includes(u)) { b.push(u); window.customAlert('Đã ghim mốc Dấu Trang!'); isGhim = true; }
+                else { b = b.filter(x => x !== u); window.customAlert('Đã hủy Dấu Trang!'); }
+                localStorage.setItem('pwa_bookmarks_duocly', JSON.stringify(b));
+                if (isGhim) { btn.classList.remove('hover:text-white'); btn.style.color = '#f43f5e'; btn.style.fontWeight = '900'; btn.style.filter = 'drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))'; }
+                else { btn.classList.add('hover:text-white'); btn.style.color = ''; btn.style.fontWeight = ''; btn.style.filter = ''; }
+            } catch(e) { console.error(e); }
+        }
+        function toggleXongPure(btn) {
+            try {
+                const u = window.location.pathname.split('/').pop().split('?')[0].split('#')[0];
+                let c = JSON.parse(localStorage.getItem('pwa_completed_duocly') || '[]');
+                let isDone = false;
+                if(!c.includes(u)) { c.push(u); window.customAlert('Đã đánh dấu bài học này là [Đã Xong]!'); isDone = true; }
+                else { c = c.filter(x => x !== u); window.customAlert('Đã bỏ đánh dấu hoàn thành bài học!'); }
+                localStorage.setItem('pwa_completed_duocly', JSON.stringify(c));
+                if (isDone) { btn.classList.remove('hover:text-white'); btn.style.color = '#34d399'; btn.style.fontWeight = '900'; btn.style.filter = 'drop-shadow(0 4px 3px rgb(0 0 0 / 0.07))'; }
+                else { btn.classList.add('hover:text-white'); btn.style.color = ''; btn.style.fontWeight = ''; btn.style.filter = ''; }
+            } catch(e) { console.error(e); }
+        }
+    </script>
+
+
+<script>
+window.customAlert = function(msg) {
+    const toast = document.createElement('div');
+    toast.className = 'fixed bottom-20 left-1/2 -translate-x-1/2 bg-slate-800 text-white px-6 py-3 rounded-full shadow-2xl z-[999999] flex items-center gap-3 transform transition-all duration-500 translate-y-10 opacity-0 font-bold tracking-wide text-sm border border-slate-700';
+    toast.innerHTML = `<i class="fa-solid fa-bell text-rose-400"></i> ${msg}`;
+    
+    document.body.appendChild(toast);
+    
+    requestAnimationFrame(() => {
+        toast.classList.remove('translate-y-10', 'opacity-0');
+    });
+    
+    setTimeout(() => {
+        toast.classList.add('translate-y-10', 'opacity-0');
+        setTimeout(() => { if(document.body.contains(toast)) document.body.removeChild(toast); }, 500);
+    }, 3000);
+};
+</script>
+
+</body>
+</html>
